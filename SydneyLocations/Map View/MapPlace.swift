@@ -1,3 +1,4 @@
+import CoreLocation
 import Foundation
 
 struct MapPlace: Identifiable, Equatable {
@@ -11,4 +12,8 @@ struct MapPlace: Identifiable, Equatable {
     let name: String
     let latitude: Double
     let longitude: Double
+    
+    var coordinate: CLLocationCoordinate2D {
+        .init(latitude: latitude, longitude: longitude)
+    }
 }

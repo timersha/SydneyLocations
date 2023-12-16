@@ -11,7 +11,7 @@ protocol MapViewModelProtocol: ObservableObject {
 
     func showList()
     func addLocation()
-    func didTapAnnotation()
+    func didTapAnnotation(place: MapPlace)
 }
 
 final class MapViewModel {
@@ -38,17 +38,13 @@ final class MapViewModel {
     }
     
     private func readPlaces() {
-        guard let locationsData: Data = fileService.getLocationsData(),
+        guard let locationsData: Data = fileService.defaultLocationsData(),
               let locations = parser.parse(data: locationsData, to: Locations.self),
               let itemLocations: [Location] = locations.locations else {
             return
         }
-        debugPrint("locations: \(locations)")
-        debugPrint("locations")
         
         let mapPlaces = factory.makeMapItems(models: itemLocations)
-        debugPrint("mapPlaces: \(mapPlaces)")
-        debugPrint("mapPlaces")
         places = mapPlaces
     }
 }
@@ -64,7 +60,7 @@ extension MapViewModel: MapViewModelProtocol {
         debugPrint("Show List Did Tap")
     }
 
-    func didTapAnnotation() {
-        debugPrint("Annotation Did Tap")
+    func didTapAnnotation(place: MapPlace) {
+        debugPrint("Annotation Did Tap \(place.name)")
     }
 }
