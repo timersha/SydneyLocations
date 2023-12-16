@@ -11,17 +11,20 @@ struct MapView<ViewModel: MapViewModelProtocol>: View {
                 coordinateRegion: $viewModel.region,
                 interactionModes: viewModel.interactionModes,
                 showsUserLocation: viewModel.showsUserLocation,
-                annotationItems: [viewModel.place]
+                annotationItems: viewModel.places
             ) { place in
                 MapAnnotation(
-                    coordinate: .init(latitude: place.latitude, longitude: place.longitude),
+                    coordinate: place.coordinate,
                     anchorPoint: CGPoint(x: 0.1, y: 0.1)
                 ) {
-                    Text(Image(systemName: "mappin.circle.fill"))
-                        .foregroundColor(.red)
-                        .font(.system(size: 30, weight: .regular))
+                    Image(systemName: "mappin.circle.fill")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.white, .red)
+                        .shadow(color: .black.opacity(0.7), radius: 3)
                         .onTapGesture {
-                            viewModel.didTapAnnotation()
+                            viewModel.didTapAnnotation(place: place)
                         }
                 }
             }

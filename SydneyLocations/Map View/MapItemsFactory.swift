@@ -7,11 +7,7 @@ protocol MapItemsFactoryProtocol {
 
     static func makeCenter(place: MapPlace) -> CLLocationCoordinate2D
 
-    static func makeRegion(
-        place: MapPlace,
-        latMeters: CLLocationDistance,
-        lonMeters: CLLocationDistance
-    ) -> MKCoordinateRegion
+    static func makeRegion(place: MapPlace) -> MKCoordinateRegion
 }
 
 enum MapItemsFactory {}
@@ -28,7 +24,6 @@ extension MapItemsFactory: MapItemsFactoryProtocol {
                 longitude: $0.longitude
             )
         }
-        
     }
 
     static func makeCenter(place: MapPlace) -> CLLocationCoordinate2D {
@@ -38,15 +33,10 @@ extension MapItemsFactory: MapItemsFactoryProtocol {
         )
     }
     
-    static func makeRegion(
-        place: MapPlace,
-        latMeters: CLLocationDistance = 650.0,
-        lonMeters: CLLocationDistance = 650.0
-    ) -> MKCoordinateRegion {
+    static func makeRegion(place: MapPlace) -> MKCoordinateRegion {
         MKCoordinateRegion(
             center: makeCenter(place: place),
-            latitudinalMeters: latMeters,
-            longitudinalMeters: lonMeters
+            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         )
     }
 }
