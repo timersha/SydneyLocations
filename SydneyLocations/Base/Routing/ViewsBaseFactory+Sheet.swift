@@ -9,8 +9,8 @@ extension ViewsBaseFactory {
                     model: model,
                     delegate: delegate
                 )
-            case .locationsList:
-                LocationsViewAssembly.build()
+            case let .locationsList(delegate):
+                LocationsViewAssembly.build(delegate: delegate)
         }
     }
 }

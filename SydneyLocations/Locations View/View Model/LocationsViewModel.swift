@@ -5,12 +5,16 @@ final class LocationsViewModel {
     private let factory: LocationsItemsFactoryProtocol.Type
     private let fileService: FileServiceProtocol.Type
     private let parser: Parsable.Type
+    weak var delegate: LocationsViewItemsDelegate?
+    
     
     init(
+        delegate: LocationsViewItemsDelegate? = nil,
         fileService: FileServiceProtocol.Type = FileService.self,
         factory: LocationsItemsFactoryProtocol.Type = LocationsItemsFactory.self,
         parser: Parsable.Type = ParserService.self
     ) {
+        self.delegate = delegate
         self.fileService = fileService
         self.factory = factory
         self.parser = parser
@@ -41,6 +45,6 @@ extension LocationsViewModel: LocationsViewModelProtocol {
 
 extension LocationsViewModel: LocationsViewItemsDelegate {
     func didTapItem(model: Location) {
-        debugPrint("didTapItem \(model)")
+        delegate?.didTapItem(model: model)
     }
 }

@@ -226,8 +226,8 @@
 		D40FE0032B2DC89D00702FA1 /* Locations View */ = {
 			isa = PBXGroup;
 			children = (
-				D40FE0492B2F0F0F00702FA1 /* View Model */,
 				D40FE0082B2DCD1A00702FA1 /* LocationsViewAssembly.swift */,
+				D40FE0492B2F0F0F00702FA1 /* View Model */,
 				D40FE0042B2DCC9600702FA1 /* LocationsView.swift */,
 				D40FE00A2B2E002B00702FA1 /* LocationItem.swift */,
 				D40FE00F2B2E038000702FA1 /* LocationView.swift */,
@@ -341,8 +341,8 @@
 		D40FE04E2B2F5FBA00702FA1 /* Location Info View */ = {
 			isa = PBXGroup;
 			children = (
-				D40FE0592B2F625D00702FA1 /* Items */,
 				D40FE0532B2F606400702FA1 /* LocationInfoViewAssembly.swift */,
+				D40FE0592B2F625D00702FA1 /* Items */,
 				D40FE04F2B2F5FD100702FA1 /* LocationInfoView.swift */,
 				D40FE0512B2F601F00702FA1 /* LocationInfoViewModel.swift */,
 				D40FE0552B2F617B00702FA1 /* LocationInfo.swift */,
@@ -363,14 +363,22 @@
 		D40FE05E2B2F877300702FA1 /* Add Location Info View */ = {
 			isa = PBXGroup;
 			children = (
+				D40FE0632B2F882A00702FA1 /* AddLocationInfoViewAssembly.swift */,
+				D40FE06B2B2F9A8100702FA1 /* Items */,
 				D40FE05F2B2F87A600702FA1 /* AddLocationInfoView.swift */,
 				D40FE0612B2F87D900702FA1 /* AddLocationInfoViewModel.swift */,
-				D40FE0632B2F882A00702FA1 /* AddLocationInfoViewAssembly.swift */,
-				D40FE0652B2F8D3E00702FA1 /* AddLocationInfoItem.swift */,
-				D40FE0672B2F8D9800702FA1 /* AddLocationInfoItemView.swift */,
 				D40FE0692B2F908900702FA1 /* AddLocationInfoItemFactory.swift */,
 			);
 			path = "Add Location Info View";
+			sourceTree = "<group>";
+		};
+		D40FE06B2B2F9A8100702FA1 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0652B2F8D3E00702FA1 /* AddLocationInfoItem.swift */,
+				D40FE0672B2F8D9800702FA1 /* AddLocationInfoItemView.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

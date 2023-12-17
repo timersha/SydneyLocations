@@ -1,5 +1,5 @@
 import Foundation
 
-protocol LocationsViewItemsDelegate {
+protocol LocationsViewItemsDelegate: AnyObject {
     func didTapItem(model: Location)
 }

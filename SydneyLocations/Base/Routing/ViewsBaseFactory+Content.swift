@@ -6,8 +6,8 @@ extension ViewsBaseFactory {
         switch type {
             case let .map(delegate):
                 MapViewAssembly.build(delegate: delegate)
-            case .locationsList:
-                LocationsViewAssembly.build()
+            case let .locationsList(delegate):
+                LocationsViewAssembly.build(delegate: delegate)
         }
     }
 }
