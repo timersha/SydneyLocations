@@ -1,8 +1,6 @@
 import Foundation
 
-protocol MapCoordinatable: Coordinatable {
-    
-}
+protocol MapCoordinatable: Coordinatable {}
 
 final class MapCoordinator {
     var childCoordinators = [String: Coordinatable]()

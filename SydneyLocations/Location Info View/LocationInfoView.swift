@@ -33,7 +33,6 @@ struct LocationInfoView<ViewModel: LocationInfoViewModelProtocol>: View {
                 viewModel.onCloseTap()
             } label: {
                 Text("Close")
-                    .font(.system(size: 14, weight: .semibold))
             }
         }
     }

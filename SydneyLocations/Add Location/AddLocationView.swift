@@ -38,7 +38,6 @@ struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
             } label: {
                 Text("Next")
                     .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .semibold))
                     .padding(.vertical, 4)
                     .padding(.horizontal, 8)
                     .background(.red)
@@ -52,7 +51,6 @@ struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
             } label: {
                 Text("Cancel")
                     .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .semibold))
                     .padding(.vertical, 4)
                     .padding(.horizontal, 8)
                     .background(.red)
