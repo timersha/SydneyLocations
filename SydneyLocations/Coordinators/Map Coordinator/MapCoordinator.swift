@@ -40,8 +40,14 @@ extension MapCoordinator: MapViewModelDelegate {
         router.showLocationsList()
     }
     
-    func showLocationDetails() {
-        debugPrint("showLocationDetails")
+    func showLocationDetails(place: MapPlace) {
+        let model = LocationInfo(
+            name: place.name,
+            lat: place.latitude,
+            lon: place.longitude,
+            description: ""
+        )
+        router.showLocationDetails(model: model, delegate: self)
     }
 }
 
@@ -50,5 +56,13 @@ extension MapCoordinator: MapViewModelDelegate {
 extension MapCoordinator: AddLocationDelegate {
     func onCancelTap() {
         router.dismissFullCover()
+    }
+}
+
+// MARK: - LocationInfoViewModelDelegate
+
+extension MapCoordinator: LocationInfoViewModelDelegate {
+    func onCloseTap() {
+        router.dismissSheet()
     }
 }

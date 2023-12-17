@@ -4,8 +4,10 @@ protocol MapRouterable {
     var rootView: AnyView { get }
     
     func showLocationsList()
+    func showLocationDetails(model: LocationInfo, delegate: LocationInfoViewModelDelegate?)
     func showAddLocation(delegate: AddLocationDelegate?)
     func dismissFullCover()
+    func dismissSheet()
 }
 
 struct MapRouter<
@@ -50,11 +52,19 @@ extension MapRouter: MapRouterable {
         )
     }
     
+    func showLocationDetails(model: LocationInfo, delegate: LocationInfoViewModelDelegate?) {
+        state.presentedItem = BaseSheetLink.locationInfo(model, delegate)
+    }
+    
     func showAddLocation(delegate: AddLocationDelegate?) {
         state.fullCoverItem = BaseFullCoverLink.addLocation(delegate)
     }
     
     func dismissFullCover() {
         state.fullCoverItem = nil
+    }
+    
+    func dismissSheet() {
+        state.presentedItem = nil
     }
 }
