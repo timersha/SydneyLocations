@@ -6,7 +6,7 @@ final class AppSceneDelegate: UIResponder, UIWindowSceneDelegate {
     var keyWindow: UIWindow?
     weak var windowScene: UIWindowScene?
     
-    private let coordinatorsFactory: AppCoordinatorsFactoryProtocol.Type = AppCoordinatorsFactory.self
+    private let coordinatorsFactory: CoordinatorsFactoryProtocol.Type = CoordinatorsFactory.self
     private var appCoordintor: Coordinatable?
     
     func scene(

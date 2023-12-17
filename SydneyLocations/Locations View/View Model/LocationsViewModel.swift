@@ -1,17 +1,5 @@
 import Foundation
 
-protocol LocationsViewModelProtocol: ObservableObject {
-    var displayItems: [any ViewGeneratable] { get }
-    
-    func onLocationAppear(model: any ViewGeneratable)
-    func addLocation()
-    func onCloseTap()
-}
-
-protocol LocationsViewItemsDelegate {
-    func didTapItem(model: Location)
-}
-
 final class LocationsViewModel {
     @Published var displayItems = [any ViewGeneratable]()
     private let factory: LocationsItemsFactoryProtocol.Type
@@ -46,14 +34,6 @@ final class LocationsViewModel {
 extension LocationsViewModel: LocationsViewModelProtocol {
     func onLocationAppear(model: any ViewGeneratable) {
         debugPrint("onLocationAppear \(model)")
-    }
-    
-    func addLocation() {
-        debugPrint("addLocation")
-    }
-    
-    func onCloseTap() {
-        debugPrint("onCloseTap")
     }
 }
 

@@ -6,6 +6,8 @@ extension ViewsBaseFactory {
         switch type {
             case .locationInfo:
                 EmptyView()
+            case .locationsList:
+                LocationsViewAssembly.build()
         }
     }
 }

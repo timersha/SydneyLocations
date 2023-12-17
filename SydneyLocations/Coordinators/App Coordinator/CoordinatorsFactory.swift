@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AppCoordinatorsFactoryProtocol {
+protocol CoordinatorsFactoryProtocol {
     static func makeAppCoordinator(window: UIWindow?) -> Coordinatable
 
     static func makeMapCoordinator(
@@ -9,11 +9,11 @@ protocol AppCoordinatorsFactoryProtocol {
     ) -> Coordinatable
 }
 
-enum AppCoordinatorsFactory {}
+enum CoordinatorsFactory {}
 
-// MARK: - AppCoordinatorsFactoryProtocol
+// MARK: - CoordinatorsFactoryProtocol
 
-extension AppCoordinatorsFactory: AppCoordinatorsFactoryProtocol {
+extension CoordinatorsFactory: CoordinatorsFactoryProtocol {
     static func makeMapCoordinator(
         appRouter: AppRouterable,
         onFinish: @escaping OnFinishFlow

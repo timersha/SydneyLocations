@@ -7,7 +7,7 @@ protocol MapCoordinatable: Coordinatable {
 final class MapCoordinator {
     var childCoordinators = [String: Coordinatable]()
     private let appRouter: AppRouterable
-    private let router: MapRouterable
+    var router: MapRouterable
     private let onFinish: OnFinishFlow
     
     init(
@@ -26,5 +26,29 @@ final class MapCoordinator {
 extension MapCoordinator: MapCoordinatable {
     func start () {
         appRouter.instantiateRoot(view: router.rootView)
+    }
+}
+
+// MARK: - MapViewModelDelegate
+
+extension MapCoordinator: MapViewModelDelegate {
+    func addLocation() {
+        router.showAddLocation(delegate: self)
+    }
+    
+    func showLocationsList() {
+        router.showLocationsList()
+    }
+    
+    func showLocationDetails() {
+        debugPrint("showLocationDetails")
+    }
+}
+
+// MARK: - AddLocationDelegate
+
+extension MapCoordinator: AddLocationDelegate {
+    func onCancelTap() {
+        router.dismissFullCover()
     }
 }
