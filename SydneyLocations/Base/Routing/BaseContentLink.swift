@@ -3,7 +3,7 @@ import SwiftUI
 enum BaseContentLink: Hashable, Identifiable {
     
     case map(MapViewModelDelegate?)
-    case locationsList
+    case locationsList(LocationsViewItemsDelegate?)
     
     var id: String {
         String(describing: self)

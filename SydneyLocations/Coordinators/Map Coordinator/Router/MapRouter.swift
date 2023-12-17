@@ -3,7 +3,7 @@ import SwiftUI
 protocol MapRouterable {
     var rootView: AnyView { get }
     
-    func showLocationsList()
+    func showLocationsList(delegate: LocationsViewItemsDelegate?)
     func showLocationDetails(model: LocationInfo, delegate: LocationInfoViewModelDelegate?)
     func showAddLocation(delegate: AddLocationDelegate?)
     func dismissFullCover()
@@ -46,9 +46,9 @@ struct MapRouter<
 // MARK: - MapRouterable
 
 extension MapRouter: MapRouterable {
-    func showLocationsList() {
+    func showLocationsList(delegate: LocationsViewItemsDelegate?) {
         state.path.append(
-            BaseContentLink.locationsList
+            BaseContentLink.locationsList(delegate)
         )
     }
     
