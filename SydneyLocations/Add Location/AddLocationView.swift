@@ -34,9 +34,9 @@ struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
     private func makeToolBar() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
-                viewModel.addLocation()
+                viewModel.onNextTap()
             } label: {
-                Text("Add")
+                Text("Next")
                     .foregroundColor(.white)
                     .font(.system(size: 14, weight: .semibold))
                     .padding(.vertical, 4)

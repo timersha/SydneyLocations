@@ -3,11 +3,11 @@ import Foundation
 final class AppCoordinator {
     var childCoordinators = [String: Coordinatable]()
     private let router: AppRouterable
-    private let factory: AppCoordinatorsFactoryProtocol.Type
+    private let factory: CoordinatorsFactoryProtocol.Type
     
     init(
         router: AppRouterable,
-        factory: AppCoordinatorsFactoryProtocol.Type = AppCoordinatorsFactory.self
+        factory: CoordinatorsFactoryProtocol.Type = CoordinatorsFactory.self
     ) {
         self.router = router
         self.factory = factory

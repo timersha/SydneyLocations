@@ -2,18 +2,6 @@ import Foundation
 import MapKit
 import SwiftUI
 
-protocol MapViewModelProtocol: ObservableObject {
-    var region: MKCoordinateRegion { get set }
-    var interactionModes: MapInteractionModes { get set }
-    var showsUserLocation: Bool { get set }
-    var place: MapPlace { get set }
-    var places: [MapPlace] { get set }
-
-    func showList()
-    func addLocation()
-    func didTapAnnotation(place: MapPlace)
-}
-
 final class MapViewModel {
     var region: MKCoordinateRegion
     @Published var interactionModes: MapInteractionModes =  .all
@@ -23,14 +11,17 @@ final class MapViewModel {
     private let factory: MapItemsFactoryProtocol.Type
     private let fileService: FileServiceProtocol.Type
     private let parser: Parsable.Type
+    private weak var delegate: MapViewModelDelegate?
     
     init(
         region: MKCoordinateRegion,
+        delegate: MapViewModelDelegate? = nil,
         fileService: FileServiceProtocol.Type = FileService.self,
         factory: MapItemsFactoryProtocol.Type = MapItemsFactory.self,
         parser: Parsable.Type = ParserService.self
     ) {
         self.region = region
+        self.delegate = delegate
         self.factory = factory
         self.fileService = fileService
         self.parser = parser
@@ -53,14 +44,15 @@ final class MapViewModel {
 
 extension MapViewModel: MapViewModelProtocol {
     func addLocation() {
-        debugPrint("Add Location Did Tap")
+        delegate?.addLocation()
     }
 
     func showList() {
-        debugPrint("Show List Did Tap")
+        delegate?.showLocationsList()
     }
 
     func didTapAnnotation(place: MapPlace) {
-        debugPrint("Annotation Did Tap \(place.name)")
+        debugPrint("place \(place.name)")
+        delegate?.showLocationDetails()
     }
 }

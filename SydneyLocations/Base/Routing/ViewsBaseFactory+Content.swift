@@ -4,8 +4,10 @@ extension ViewsBaseFactory {
     @ViewBuilder
     static func makeContent(type: BaseContentLink) -> some View {
         switch type {
-            case .map:
-                MapViewAssembly.build()
+            case let .map(delegate):
+                MapViewAssembly.build(delegate: delegate)
+            case .locationsList:
+                LocationsViewAssembly.build()
         }
     }
 }

@@ -4,8 +4,8 @@ extension ViewsBaseFactory {
     @ViewBuilder
     static func makeFullCover(type: BaseFullCoverLink) -> some View {
         switch type {
-            case .addLocation:
-                AddLocationViewAssembly.build()
+            case let .addLocation(delegate):
+                AddLocationViewAssembly.build(delegate: delegate)
         }
     }
 }
