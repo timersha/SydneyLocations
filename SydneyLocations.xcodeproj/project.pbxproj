@@ -32,6 +32,22 @@
 		D40FE01A2B2E1DF200702FA1 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0192B2E1DF200702FA1 /* AddLocationViewModel.swift */; };
 		D40FE01C2B2E1E3700702FA1 /* AddLocationViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE01B2B2E1E3700702FA1 /* AddLocationViewAssembly.swift */; };
 		D40FE01E2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE01D2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift */; };
+		D40FE0212B2ED68A00702FA1 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0202B2ED68A00702FA1 /* Coordinatable.swift */; };
+		D40FE0242B2ED7DB00702FA1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0232B2ED7DB00702FA1 /* AppCoordinator.swift */; };
+		D40FE0262B2EF54C00702FA1 /* AppCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0252B2EF54C00702FA1 /* AppCoordinatorAssembly.swift */; };
+		D40FE0282B2EF6A400702FA1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0272B2EF6A400702FA1 /* AppRouter.swift */; };
+		D40FE02B2B2EF7A900702FA1 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE02A2B2EF7A900702FA1 /* MapCoordinator.swift */; };
+		D40FE02D2B2EF81100702FA1 /* MapCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE02C2B2EF81100702FA1 /* MapCoordinatorAssembly.swift */; };
+		D40FE02F2B2EF98100702FA1 /* AppCoordinatorsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE02E2B2EF98100702FA1 /* AppCoordinatorsFactory.swift */; };
+		D40FE0312B2EFA5F00702FA1 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0302B2EFA5F00702FA1 /* MapRouter.swift */; };
+		D40FE0342B2EFAEC00702FA1 /* ViewsBaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0332B2EFAEC00702FA1 /* ViewsBaseFactory.swift */; };
+		D40FE0362B2EFB0800702FA1 /* BaseContentLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0352B2EFB0800702FA1 /* BaseContentLink.swift */; };
+		D40FE0382B2EFB4300702FA1 /* BaseSheetLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0372B2EFB4300702FA1 /* BaseSheetLink.swift */; };
+		D40FE03A2B2EFB6C00702FA1 /* BaseFullCoverLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0392B2EFB6C00702FA1 /* BaseFullCoverLink.swift */; };
+		D40FE03D2B2EFBDB00702FA1 /* MapRouterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE03C2B2EFBDB00702FA1 /* MapRouterState.swift */; };
+		D40FE03F2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE03E2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift */; };
+		D40FE0412B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0402B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift */; };
+		D40FE0432B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0422B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +77,22 @@
 		D40FE0192B2E1DF200702FA1 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		D40FE01B2B2E1E3700702FA1 /* AddLocationViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewAssembly.swift; sourceTree = "<group>"; };
 		D40FE01D2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
+		D40FE0202B2ED68A00702FA1 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		D40FE0232B2ED7DB00702FA1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D40FE0252B2EF54C00702FA1 /* AppCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		D40FE0272B2EF6A400702FA1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		D40FE02A2B2EF7A900702FA1 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		D40FE02C2B2EF81100702FA1 /* MapCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		D40FE02E2B2EF98100702FA1 /* AppCoordinatorsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorsFactory.swift; sourceTree = "<group>"; };
+		D40FE0302B2EFA5F00702FA1 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		D40FE0332B2EFAEC00702FA1 /* ViewsBaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsBaseFactory.swift; sourceTree = "<group>"; };
+		D40FE0352B2EFB0800702FA1 /* BaseContentLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContentLink.swift; sourceTree = "<group>"; };
+		D40FE0372B2EFB4300702FA1 /* BaseSheetLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSheetLink.swift; sourceTree = "<group>"; };
+		D40FE0392B2EFB6C00702FA1 /* BaseFullCoverLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFullCoverLink.swift; sourceTree = "<group>"; };
+		D40FE03C2B2EFBDB00702FA1 /* MapRouterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouterState.swift; sourceTree = "<group>"; };
+		D40FE03E2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewsBaseFactory+Content.swift"; sourceTree = "<group>"; };
+		D40FE0402B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewsBaseFactory+Sheet.swift"; sourceTree = "<group>"; };
+		D40FE0422B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewsBaseFactory+FullCover.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +128,7 @@
 				D40FE0132B2E03E400702FA1 /* Extensions */,
 				D40FE00C2B2E02BD00702FA1 /* Base */,
 				D40FDFEE2B2D77E700702FA1 /* App */,
+				D40FE01F2B2ED67900702FA1 /* Coordinators */,
 				D40FE0162B2E1B8B00702FA1 /* Add Location */,
 				D40FE0032B2DC89D00702FA1 /* Locations View */,
 				D40FDFF32B2D833A00702FA1 /* Map View */,
@@ -171,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D40FE00D2B2E02D000702FA1 /* ViewGeneratable.swift */,
+				D40FE0322B2EFAE000702FA1 /* Routing */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -192,6 +226,60 @@
 				D40FE0192B2E1DF200702FA1 /* AddLocationViewModel.swift */,
 			);
 			path = "Add Location";
+			sourceTree = "<group>";
+		};
+		D40FE01F2B2ED67900702FA1 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0202B2ED68A00702FA1 /* Coordinatable.swift */,
+				D40FE0222B2ED7C800702FA1 /* App Coordinator */,
+				D40FE0292B2EF78100702FA1 /* Map Coordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D40FE0222B2ED7C800702FA1 /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0252B2EF54C00702FA1 /* AppCoordinatorAssembly.swift */,
+				D40FE0232B2ED7DB00702FA1 /* AppCoordinator.swift */,
+				D40FE0272B2EF6A400702FA1 /* AppRouter.swift */,
+				D40FE02E2B2EF98100702FA1 /* AppCoordinatorsFactory.swift */,
+			);
+			path = "App Coordinator";
+			sourceTree = "<group>";
+		};
+		D40FE0292B2EF78100702FA1 /* Map Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE03B2B2EFBCF00702FA1 /* Router */,
+				D40FE02C2B2EF81100702FA1 /* MapCoordinatorAssembly.swift */,
+				D40FE02A2B2EF7A900702FA1 /* MapCoordinator.swift */,
+			);
+			path = "Map Coordinator";
+			sourceTree = "<group>";
+		};
+		D40FE0322B2EFAE000702FA1 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0352B2EFB0800702FA1 /* BaseContentLink.swift */,
+				D40FE0372B2EFB4300702FA1 /* BaseSheetLink.swift */,
+				D40FE0392B2EFB6C00702FA1 /* BaseFullCoverLink.swift */,
+				D40FE0332B2EFAEC00702FA1 /* ViewsBaseFactory.swift */,
+				D40FE03E2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift */,
+				D40FE0402B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift */,
+				D40FE0422B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		D40FE03B2B2EFBCF00702FA1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0302B2EFA5F00702FA1 /* MapRouter.swift */,
+				D40FE03C2B2EFBDB00702FA1 /* MapRouterState.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,16 +352,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FE0312B2EFA5F00702FA1 /* MapRouter.swift in Sources */,
+				D40FE02D2B2EF81100702FA1 /* MapCoordinatorAssembly.swift in Sources */,
 				D40FDFDA2B2C9FA400702FA1 /* MapView.swift in Sources */,
+				D40FE03D2B2EFBDB00702FA1 /* MapRouterState.swift in Sources */,
 				D40FDFF52B2DA1A300702FA1 /* ParserService.swift in Sources */,
+				D40FE0242B2ED7DB00702FA1 /* AppCoordinator.swift in Sources */,
 				D40FDFED2B2CA67D00702FA1 /* FileService.swift in Sources */,
+				D40FE0262B2EF54C00702FA1 /* AppCoordinatorAssembly.swift in Sources */,
+				D40FE0432B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift in Sources */,
+				D40FE0282B2EF6A400702FA1 /* AppRouter.swift in Sources */,
 				D40FDFF72B2DA62A00702FA1 /* Locations.swift in Sources */,
 				D40FDFE92B2CA5A600702FA1 /* Location.swift in Sources */,
+				D40FE0212B2ED68A00702FA1 /* Coordinatable.swift in Sources */,
+				D40FE02B2B2EF7A900702FA1 /* MapCoordinator.swift in Sources */,
+				D40FE0362B2EFB0800702FA1 /* BaseContentLink.swift in Sources */,
 				D40FE01E2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				D40FE00E2B2E02D000702FA1 /* ViewGeneratable.swift in Sources */,
 				D40FE0102B2E038000702FA1 /* LocationView.swift in Sources */,
 				D40FDFF22B2D788C00702FA1 /* AppSceneDelegate.swift in Sources */,
+				D40FE02F2B2EF98100702FA1 /* AppCoordinatorsFactory.swift in Sources */,
+				D40FE0382B2EFB4300702FA1 /* BaseSheetLink.swift in Sources */,
 				D40FE00B2B2E002B00702FA1 /* LocationItem.swift in Sources */,
+				D40FE0342B2EFAEC00702FA1 /* ViewsBaseFactory.swift in Sources */,
 				D40FDFFB2B2DA83400702FA1 /* MapViewAssembly.swift in Sources */,
 				D40FE0122B2E03C500702FA1 /* View+Extensions.swift in Sources */,
 				D40FE01C2B2E1E3700702FA1 /* AddLocationViewAssembly.swift in Sources */,
@@ -284,8 +385,11 @@
 				D40FDFFF2B2DAE9200702FA1 /* MapItemsFactory.swift in Sources */,
 				D40FE0052B2DCC9600702FA1 /* LocationsView.swift in Sources */,
 				D40FDFF92B2DA74800702FA1 /* MapViewModel.swift in Sources */,
+				D40FE03A2B2EFB6C00702FA1 /* BaseFullCoverLink.swift in Sources */,
+				D40FE03F2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift in Sources */,
 				D40FE0182B2E1D9700702FA1 /* AddLocationView.swift in Sources */,
 				D40FDFFD2B2DAE0F00702FA1 /* MapPlace.swift in Sources */,
+				D40FE0412B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift in Sources */,
 				D40FE0092B2DCD1A00702FA1 /* LocationsViewAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

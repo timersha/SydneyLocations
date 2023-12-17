@@ -11,20 +11,19 @@ struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
                 interactionModes: viewModel.interactionModes,
                 showsUserLocation: viewModel.showsUserLocation
             )
+            .ignoresSafeArea()
             .overlay(alignment: .center) {
                 Image(systemName: "mappin")
                     .resizable()
+                    .offset(y: -20)
                     .frame(width: 15, height: 40)
                     .symbolRenderingMode(.multicolor)
                     .foregroundStyle(.red, .white)
                     .shadow(color: .black.opacity(0.7), radius: 3)
             }
             .onChange(of: region) { region in
-                debugPrint("new location: \(region.center.latitude) \(region.center.longitude)")
+                viewModel.onRegionUpdate(region: region)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle("Add Locations")
-            .font(.system(size: 17, weight: .semibold))
             .toolbar {
                 makeToolBar()
             }
@@ -38,7 +37,26 @@ struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
                 viewModel.addLocation()
             } label: {
                 Text("Add")
+                    .foregroundColor(.white)
                     .font(.system(size: 14, weight: .semibold))
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .background(.red)
+                    .cornerRadius(8)
+            }
+        }
+        
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+                viewModel.onCancelTap()
+            } label: {
+                Text("Cancel")
+                    .foregroundColor(.white)
+                    .font(.system(size: 14, weight: .semibold))
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .background(.red)
+                    .cornerRadius(8)
             }
         }
     }
