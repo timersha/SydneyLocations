@@ -52,7 +52,6 @@ extension MapViewModel: MapViewModelProtocol {
     }
 
     func didTapAnnotation(place: MapPlace) {
-        debugPrint("place \(place.name)")
-        delegate?.showLocationDetails()
+        delegate?.showLocationDetails(place: place)
     }
 }

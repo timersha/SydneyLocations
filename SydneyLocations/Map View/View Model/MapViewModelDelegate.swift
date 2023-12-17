@@ -5,5 +5,5 @@ protocol MapViewModelDelegate: AnyObject {
 
     func showLocationsList()
     
-    func showLocationDetails()
+    func showLocationDetails(place: MapPlace)
 }

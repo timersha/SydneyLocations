@@ -52,6 +52,13 @@
 		D40FE0482B2F052D00702FA1 /* MapViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0472B2F052D00702FA1 /* MapViewModelDelegate.swift */; };
 		D40FE04B2B2F0F2B00702FA1 /* LocationsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE04A2B2F0F2B00702FA1 /* LocationsViewModelProtocol.swift */; };
 		D40FE04D2B2F0F4700702FA1 /* LocationsViewItemsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE04C2B2F0F4700702FA1 /* LocationsViewItemsDelegate.swift */; };
+		D40FE0502B2F5FD100702FA1 /* LocationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE04F2B2F5FD100702FA1 /* LocationInfoView.swift */; };
+		D40FE0522B2F601F00702FA1 /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0512B2F601F00702FA1 /* LocationInfoViewModel.swift */; };
+		D40FE0542B2F606400702FA1 /* LocationInfoViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0532B2F606400702FA1 /* LocationInfoViewAssembly.swift */; };
+		D40FE0562B2F617B00702FA1 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0552B2F617B00702FA1 /* LocationInfo.swift */; };
+		D40FE0582B2F61D700702FA1 /* LocationInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0572B2F61D700702FA1 /* LocationInfoItem.swift */; };
+		D40FE05B2B2F626C00702FA1 /* LocationInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE05A2B2F626C00702FA1 /* LocationInfoItemView.swift */; };
+		D40FE05D2B2F62E400702FA1 /* LocationInfoItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE05C2B2F62E400702FA1 /* LocationInfoItemsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +108,13 @@
 		D40FE0472B2F052D00702FA1 /* MapViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegate.swift; sourceTree = "<group>"; };
 		D40FE04A2B2F0F2B00702FA1 /* LocationsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModelProtocol.swift; sourceTree = "<group>"; };
 		D40FE04C2B2F0F4700702FA1 /* LocationsViewItemsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewItemsDelegate.swift; sourceTree = "<group>"; };
+		D40FE04F2B2F5FD100702FA1 /* LocationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoView.swift; sourceTree = "<group>"; };
+		D40FE0512B2F601F00702FA1 /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
+		D40FE0532B2F606400702FA1 /* LocationInfoViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewAssembly.swift; sourceTree = "<group>"; };
+		D40FE0552B2F617B00702FA1 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
+		D40FE0572B2F61D700702FA1 /* LocationInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoItem.swift; sourceTree = "<group>"; };
+		D40FE05A2B2F626C00702FA1 /* LocationInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoItemView.swift; sourceTree = "<group>"; };
+		D40FE05C2B2F62E400702FA1 /* LocationInfoItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoItemsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +147,7 @@
 		D40FDFD62B2C9FA400702FA1 /* SydneyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				D40FE04E2B2F5FBA00702FA1 /* Location Info View */,
 				D40FE0132B2E03E400702FA1 /* Extensions */,
 				D40FE00C2B2E02BD00702FA1 /* Base */,
 				D40FDFEE2B2D77E700702FA1 /* App */,
@@ -310,6 +325,28 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		D40FE04E2B2F5FBA00702FA1 /* Location Info View */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0592B2F625D00702FA1 /* Items */,
+				D40FE0532B2F606400702FA1 /* LocationInfoViewAssembly.swift */,
+				D40FE04F2B2F5FD100702FA1 /* LocationInfoView.swift */,
+				D40FE0512B2F601F00702FA1 /* LocationInfoViewModel.swift */,
+				D40FE0552B2F617B00702FA1 /* LocationInfo.swift */,
+				D40FE05C2B2F62E400702FA1 /* LocationInfoItemsFactory.swift */,
+			);
+			path = "Location Info View";
+			sourceTree = "<group>";
+		};
+		D40FE0592B2F625D00702FA1 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0572B2F61D700702FA1 /* LocationInfoItem.swift */,
+				D40FE05A2B2F626C00702FA1 /* LocationInfoItemView.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,12 +418,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D40FE0312B2EFA5F00702FA1 /* MapRouter.swift in Sources */,
+				D40FE05B2B2F626C00702FA1 /* LocationInfoItemView.swift in Sources */,
+				D40FE05D2B2F62E400702FA1 /* LocationInfoItemsFactory.swift in Sources */,
 				D40FE02D2B2EF81100702FA1 /* MapCoordinatorAssembly.swift in Sources */,
 				D40FE0482B2F052D00702FA1 /* MapViewModelDelegate.swift in Sources */,
+				D40FE0562B2F617B00702FA1 /* LocationInfo.swift in Sources */,
 				D40FDFDA2B2C9FA400702FA1 /* MapView.swift in Sources */,
 				D40FE03D2B2EFBDB00702FA1 /* MapRouterState.swift in Sources */,
 				D40FDFF52B2DA1A300702FA1 /* ParserService.swift in Sources */,
 				D40FE0242B2ED7DB00702FA1 /* AppCoordinator.swift in Sources */,
+				D40FE0542B2F606400702FA1 /* LocationInfoViewAssembly.swift in Sources */,
 				D40FDFED2B2CA67D00702FA1 /* FileService.swift in Sources */,
 				D40FE0262B2EF54C00702FA1 /* AppCoordinatorAssembly.swift in Sources */,
 				D40FE0432B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift in Sources */,
@@ -399,6 +440,7 @@
 				D40FE01E2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				D40FE00E2B2E02D000702FA1 /* ViewGeneratable.swift in Sources */,
 				D40FE0462B2F044700702FA1 /* MapViewModelProtocol.swift in Sources */,
+				D40FE0582B2F61D700702FA1 /* LocationInfoItem.swift in Sources */,
 				D40FE0102B2E038000702FA1 /* LocationView.swift in Sources */,
 				D40FDFF22B2D788C00702FA1 /* AppSceneDelegate.swift in Sources */,
 				D40FE04D2B2F0F4700702FA1 /* LocationsViewItemsDelegate.swift in Sources */,
@@ -417,6 +459,8 @@
 				D40FE0052B2DCC9600702FA1 /* LocationsView.swift in Sources */,
 				D40FDFF92B2DA74800702FA1 /* MapViewModel.swift in Sources */,
 				D40FE03A2B2EFB6C00702FA1 /* BaseFullCoverLink.swift in Sources */,
+				D40FE0502B2F5FD100702FA1 /* LocationInfoView.swift in Sources */,
+				D40FE0522B2F601F00702FA1 /* LocationInfoViewModel.swift in Sources */,
 				D40FE03F2B2EFC5E00702FA1 /* ViewsBaseFactory+Content.swift in Sources */,
 				D40FE0182B2E1D9700702FA1 /* AddLocationView.swift in Sources */,
 				D40FDFFD2B2DAE0F00702FA1 /* MapPlace.swift in Sources */,

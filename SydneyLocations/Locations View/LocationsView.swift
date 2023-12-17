@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LocationsView<ViewModel: LocationsViewModelProtocol>: View {
+
     @StateObject var viewModel: ViewModel
 
     var body: some View {

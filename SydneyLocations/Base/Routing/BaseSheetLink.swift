@@ -2,7 +2,7 @@ import SwiftUI
 
 enum BaseSheetLink: Hashable, Identifiable {
     
-    case locationInfo
+    case locationInfo(LocationInfo,LocationInfoViewModelDelegate?)
     case locationsList
     
     var id: String {
