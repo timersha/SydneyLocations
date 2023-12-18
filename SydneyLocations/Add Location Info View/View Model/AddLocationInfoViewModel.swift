@@ -9,6 +9,7 @@ final class AddLocationInfoViewModel: AddLocationInfoItemDelegate {
     
     @Published var displayItems = [any ViewGeneratable]()
     @Published var isSaveDisabled: Bool = false
+    @Published var loaderOpactiy: Double = .zero
     private let factory: AddLocationInfoItemFactoryProtocol.Type
     weak var delegate: AddLocationInfoDelegate?
     private var cancellables = Set<AnyCancellable>()
@@ -46,8 +47,6 @@ final class AddLocationInfoViewModel: AddLocationInfoItemDelegate {
             .CombineLatest(dPublisher, nPublisher)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] descriptionText, nameText in
-                debugPrint("name: \(nameText)")
-                debugPrint("description: \(descriptionText)")
                 self?.name = nameText
                 self?.description = descriptionText
                 self?.isSaveDisabled = nameText.isEmpty || descriptionText.isEmpty
@@ -62,6 +61,12 @@ extension AddLocationInfoViewModel: AddLocationInfoViewModelProtocol {
         guard !name.isEmpty, !description.isEmpty else {
             return
         }
-        delegate?.onSaveTap(name: name, description: description)
+        loaderOpactiy = 1
+        delegate?.onSaveTap(
+            name: name,
+            description: description
+        ) { [weak self] in
+            self?.loaderOpactiy = .zero
+        }
     }
 }

@@ -11,34 +11,47 @@ final class CoreDataService: NSObject, CoreDataServiceProtocol {
     static let shared: CoreDataServiceProtocol = CoreDataService()
     
     var subscriptions = [NSFetchedResultsController<SydneyLocation>: FetchResultClosure]()
-    
+    private var lastToken: NSPersistentHistoryToken?
+    private var notificationToken: NSObjectProtocol?
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: .containerName)
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        container.viewContext.name = "ViewContext"
-        container.viewContext.undoManager = nil
-        container.viewContext.shouldDeleteInaccessibleFaults = true
-        container.persistentStoreDescriptions.first?.shouldMigrateStoreAutomatically = true
-        container.persistentStoreDescriptions.first?.shouldInferMappingModelAutomatically = true
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("Failed to retrieve a persistent store description.")
+        }
+
+        description.setOption(
+            true as NSNumber,
+            forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+        )
         
-        container.loadPersistentStores { storeDescription, err in
-            
-            debugPrint("storeDescription: \(storeDescription)")
-            
-            storeDescription.shouldMigrateStoreAutomatically = true
-            storeDescription.shouldInferMappingModelAutomatically = false
-            
-            if let error = err {
-                fatalError("Load Failed: \(String(describing: err))")
+        description.setOption(
+            true as NSNumber,
+            forKey: NSPersistentHistoryTrackingKey
+        )
+        
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
+
+        container.viewContext.automaticallyMergesChangesFromParent = false
+        container.viewContext.name = "viewContext"
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.undoManager = nil
+        container.viewContext.shouldDeleteInaccessibleFaults = true
         return container
     }()
     
     override init() {
         super.init()
         subscribeToNotifications()
+    }
+    
+    deinit {
+        if let observer = notificationToken {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     private func subscribeToNotifications() {
@@ -48,6 +61,16 @@ final class CoreDataService: NSObject, CoreDataServiceProtocol {
             name: NSManagedObjectContext.didSaveObjectsNotification,
             object: nil
         )
+        
+        notificationToken = NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange,
+            object: nil,
+            queue: nil
+        ) { note in
+            Task {
+                await self.fetchPersistentHistoryTransactionsAndChanges()
+            }
+        }
     }
     
     @objc
@@ -83,16 +106,35 @@ extension CoreDataService {
         name: String? = nil,
         author: String? = nil
     ) -> NSManagedObjectContext {
-        // Create a private queue context.
-        /// - Tag: newBackgroundContext
         let taskContext = persistentContainer.newBackgroundContext()
         taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        // Set unused undoManager to nil for macOS (it is nil by default on iOS)
-        // to reduce resource requirements.
         taskContext.undoManager = nil
-        // Add name and author to identify source of persistent history changes.
         taskContext.name = name
         taskContext.transactionAuthor = author
         return taskContext
+    }
+    
+    func fetchPersistentHistoryTransactionsAndChanges() async {
+        let taskContext = newTaskContext()
+        taskContext.name = "persistentHistoryContext"
+        
+        await taskContext.perform {
+            let changeRequest = NSPersistentHistoryChangeRequest.fetchHistory(after: self.lastToken)
+            let historyResult = try? taskContext.execute(changeRequest) as? NSPersistentHistoryResult
+            if let history = historyResult?.result as? [NSPersistentHistoryTransaction], !history.isEmpty {
+                self.mergePersistentHistoryChanges(from: history)
+                return
+            }
+        }
+    }
+    
+    private func mergePersistentHistoryChanges(from history: [NSPersistentHistoryTransaction]) {
+        let viewContext = persistentContainer.viewContext
+        viewContext.perform {
+            history.forEach { transaction in
+                viewContext.mergeChanges(fromContextDidSave: transaction.objectIDNotification())
+                self.lastToken = transaction.token
+            }
+        }
     }
 }

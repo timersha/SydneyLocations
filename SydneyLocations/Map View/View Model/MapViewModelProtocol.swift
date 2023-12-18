@@ -12,4 +12,5 @@ protocol MapViewModelProtocol: ObservableObject {
     func showList()
     func createLocation()
     func didTapAnnotation(place: MapPlace)
+    func onAppear()
 }

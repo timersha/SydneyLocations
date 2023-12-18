@@ -34,6 +34,9 @@ struct MapView<ViewModel: MapViewModelProtocol>: View {
             .toolbar {
                 makeToolBar()
             }
+            .onAppear {
+                viewModel.onAppear()
+            }
         }
     }
     

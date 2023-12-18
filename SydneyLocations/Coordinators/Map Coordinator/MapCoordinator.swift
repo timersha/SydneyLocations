@@ -33,7 +33,7 @@ extension MapCoordinator: MapCoordinatable {
 // MARK: - MapViewModelDelegate
 
 extension MapCoordinator: MapViewModelDelegate {
-    func createLocation() {
+    func createLocation(didAddLocation: @escaping () -> Void) {
         let rootRouterState = RootRouterState(
             path: router.routePath(),
             presentedItem: router.presentedItem(),
@@ -44,6 +44,7 @@ extension MapCoordinator: MapViewModelDelegate {
         ) { [weak self] coordinator in
             guard let self = self else { return }
             self.remove(childCoordinator: coordinator)
+            didAddLocation()
         }
         add(childCoordinator: createLocationCoordinator)
         createLocationCoordinator.start()
@@ -58,7 +59,7 @@ extension MapCoordinator: MapViewModelDelegate {
             name: place.name,
             lat: place.latitude,
             lon: place.longitude,
-            description: ""
+            description: place.description ?? ""
         )
         router.showLocationDetails(model: model, delegate: self)
     }
@@ -80,7 +81,7 @@ extension MapCoordinator: LocationsViewItemsDelegate {
             name: model.name,
             lat: model.latitude,
             lon: model.longitude,
-            description: ""
+            description: model.descriptionText ?? ""
         )
         router.showLocationDetails(model: model, delegate: self)
     }
