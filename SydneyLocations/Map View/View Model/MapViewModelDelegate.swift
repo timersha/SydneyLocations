@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MapViewModelDelegate: AnyObject {
-    func createLocation()
+    func createLocation(didAddLocation: @escaping () -> Void)
 
     func showLocationsList()
     

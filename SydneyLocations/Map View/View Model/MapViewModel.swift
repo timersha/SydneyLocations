@@ -31,6 +31,7 @@ final class MapViewModel {
         self.fileService = fileService
         self.parser = parser
         readPlaces()
+        readLocations()
     }
     
     private func readPlaces() {
@@ -66,7 +67,9 @@ final class MapViewModel {
 
 extension MapViewModel: MapViewModelProtocol {
     func createLocation() {
-        delegate?.createLocation()
+        delegate?.createLocation { [weak self] in
+            self?.readLocations()
+        }
     }
 
     func showList() {
@@ -75,5 +78,9 @@ extension MapViewModel: MapViewModelProtocol {
 
     func didTapAnnotation(place: MapPlace) {
         delegate?.showLocationDetails(place: place)
+    }
+    
+    func onAppear() {
+        readLocations()
     }
 }

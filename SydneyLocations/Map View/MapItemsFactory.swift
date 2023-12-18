@@ -21,7 +21,8 @@ extension MapItemsFactory: MapItemsFactoryProtocol {
             MapPlace(
                 name: $0.name,
                 latitude: $0.latitude,
-                longitude: $0.longitude
+                longitude: $0.longitude,
+                description: $0.descriptionText
             )
         }
     }

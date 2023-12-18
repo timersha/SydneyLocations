@@ -15,7 +15,9 @@ extension CoreDataService {
     
     private func makeLocations(sLocations: [SydneyLocation]) -> [Location] {
         let locations: [Location] = sLocations.compactMap {
-            guard let name = $0.name, let id = $0.id else { return nil }
+            guard let name = $0.name, let id = $0.id else {
+                return nil
+            }
             return Location(
                 id: id,
                 name: name,
@@ -67,8 +69,7 @@ extension CoreDataService {
     
     // MARK: - CREATE
     
-    @discardableResult
-    func create(location: Location) async -> Bool? {
+    func create(location: Location) async {
         await createLocation(
             id: location.id ?? UUID(),
             name: location.name,
@@ -78,46 +79,28 @@ extension CoreDataService {
         )
     }
     
-    @discardableResult
     func createLocation(
         id: UUID,
         name: String,
         latitude: Double,
         longitude: Double,
         descriptionText: String
-    ) async -> Bool? {
+    ) async {
         
         let context = newTaskContext(
             name: "CreateLocation",
             author: "\(#function)"
         )
         
-        let result = await context.perform {
-            
-            let entityDescription = NSEntityDescription.insertNewObject(
-                forEntityName: .entityName,
-                into: context
-            )
-            
-            let insertRequest = NSBatchInsertRequest(
-                entity: entityDescription.entity,
-                managedObjectHandler: { model in
-                    model.setValue(id, forKey: .id)
-                    model.setValue(name, forKey: .name)
-                    model.setValue(latitude, forKey: .latitude)
-                    model.setValue(longitude, forKey: .longitude)
-                    model.setValue(descriptionText, forKey: .descriptionText)
-                    return true
-                }
-            )
-            
-            insertRequest.resultType = .statusOnly
-            let fetchResult = try? context.execute(insertRequest)
+        await context.perform {
+            let sLocation = SydneyLocation(context: context)
+            sLocation.setValue(id, forKey: .id)
+            sLocation.setValue(name, forKey: .name)
+            sLocation.setValue(latitude, forKey: .latitude)
+            sLocation.setValue(longitude, forKey: .longitude)
+            sLocation.setValue(descriptionText, forKey: .descriptionText)
             try? context.save()
-            let success = (fetchResult as? NSBatchInsertResult)?.result as? Bool
-            return success
         }
-        return result
     }
     
     // MARK: - UPDATE

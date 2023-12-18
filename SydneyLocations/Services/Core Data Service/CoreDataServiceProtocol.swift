@@ -11,16 +11,15 @@ protocol CoreDataServiceProtocol {
     // MARK: - CREATE
     
     @discardableResult
-    func create(location: Location) async -> Bool?
+    func create(location: Location) async
     
-    @discardableResult
     func createLocation(
         id: UUID,
         name: String,
         latitude: Double,
         longitude: Double,
         descriptionText: String
-    ) async -> Bool?
+    ) async
     
     // MARK: - UPDATE
     

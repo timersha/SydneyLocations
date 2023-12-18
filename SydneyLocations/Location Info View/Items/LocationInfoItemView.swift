@@ -5,7 +5,7 @@ struct LocationInfoItemView: View {
     
     var body: some View {
         Text(model.text)
-            .lineLimit(.zero)
+            .lineLimit(Int.max)
             .font(.system(size: 17))
             .foregroundColor(.black)
             .padding(.horizontal, 16)
