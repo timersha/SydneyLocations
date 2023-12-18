@@ -43,8 +43,8 @@ final class MapViewModel {
 // MARK: - MapViewModelProtocol
 
 extension MapViewModel: MapViewModelProtocol {
-    func addLocation() {
-        delegate?.addLocation()
+    func createLocation() {
+        delegate?.createLocation()
     }
 
     func showList() {

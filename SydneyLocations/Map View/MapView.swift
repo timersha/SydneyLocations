@@ -41,7 +41,7 @@ struct MapView<ViewModel: MapViewModelProtocol>: View {
     private func makeToolBar() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Button {
-                viewModel.addLocation()
+                viewModel.createLocation()
             } label: {
                 Image(systemName: "plus")
             }

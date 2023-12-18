@@ -8,6 +8,8 @@ extension ViewsBaseFactory {
                 MapViewAssembly.build(delegate: delegate)
             case let .locationsList(delegate):
                 LocationsViewAssembly.build(delegate: delegate)
+            case let .addLocationInfo(delegate):
+                AddLocationInfoViewAssembly.build(delegate: delegate)
         }
     }
 }

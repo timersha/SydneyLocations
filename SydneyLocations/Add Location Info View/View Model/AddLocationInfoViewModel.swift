@@ -1,25 +1,24 @@
 import SwiftUI
 
-protocol AddLocationInfoViewModelProtocol: ObservableObject {
-    var displayItems: [any ViewGeneratable] { get set }
-    
-    func onSaveTap()
-}
-
-protocol AddLocationInfoItemDelegate: ObservableObject {
-    var name: String { get set }
-    var description: String { get set }
-}
-
 final class AddLocationInfoViewModel: AddLocationInfoItemDelegate {
-    @Published var name: String = ""
-    @Published var description: String = ""
+    var name: String
+    var description: String
+    var bindedName: Binding<String>?
+    var bindedDescription: Binding<String>?
+    
     @Published var displayItems = [any ViewGeneratable]()
     private let factory: AddLocationInfoItemFactoryProtocol.Type
+    weak var delegate: AddLocationInfoDelegate?
     
     init(
+        name: String = "",
+        description: String = "",
+        delegate: AddLocationInfoDelegate? = nil,
         factory: AddLocationInfoItemFactoryProtocol.Type = AddLocationInfoItemFactory.self
     ) {
+        self.name = name
+        self.description = description
+        self.delegate = delegate
         self.factory = factory
         makeItems()
     }
@@ -34,6 +33,6 @@ final class AddLocationInfoViewModel: AddLocationInfoItemDelegate {
 
 extension AddLocationInfoViewModel: AddLocationInfoViewModelProtocol {
     func onSaveTap() {
-        debugPrint("onSaveTap name: \(name) description: \(description)")
+        debugPrint("onSaveTap name: \(bindedName?.wrappedValue) description: \(bindedDescription?.wrappedValue)")
     }
 }

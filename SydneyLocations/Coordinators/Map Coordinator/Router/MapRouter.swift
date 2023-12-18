@@ -2,10 +2,12 @@ import SwiftUI
 
 protocol MapRouterable {
     var rootView: AnyView { get }
-    
+
+    func routePath() -> Binding<NavigationPath>
+    func presentedItem() -> Binding<BaseSheetLink?>
+    func fullCoverItem() -> Binding<BaseFullCoverLink?>
     func showLocationsList(delegate: LocationsViewItemsDelegate?)
     func showLocationDetails(model: LocationInfo, delegate: LocationInfoViewModelDelegate?)
-    func showAddLocation(delegate: AddLocationDelegate?)
     func dismissFullCover()
     func dismissSheet()
 }
@@ -46,6 +48,19 @@ struct MapRouter<
 // MARK: - MapRouterable
 
 extension MapRouter: MapRouterable {
+    
+    func routePath() -> Binding<NavigationPath> {
+        $state.path
+    }
+    
+    func presentedItem() -> Binding<BaseSheetLink?> {
+        $state.presentedItem
+    }
+    
+    func fullCoverItem() -> Binding<BaseFullCoverLink?> {
+        $state.fullCoverItem
+    }
+    
     func showLocationsList(delegate: LocationsViewItemsDelegate?) {
         state.path.append(
             BaseContentLink.locationsList(delegate)
@@ -54,10 +69,6 @@ extension MapRouter: MapRouterable {
     
     func showLocationDetails(model: LocationInfo, delegate: LocationInfoViewModelDelegate?) {
         state.presentedItem = BaseSheetLink.locationInfo(model, delegate)
-    }
-    
-    func showAddLocation(delegate: AddLocationDelegate?) {
-        state.fullCoverItem = BaseFullCoverLink.addLocation(delegate)
     }
     
     func dismissFullCover() {

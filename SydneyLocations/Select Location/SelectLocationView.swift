@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct AddLocationView<ViewModel: AddLocationViewProtocol>: View {
+struct SelectLocationView<ViewModel: SelectLocationViewProtocol>: View {
     @StateObject var viewModel: ViewModel
     @State var region: MKCoordinateRegion
     var body: some View {

@@ -10,6 +10,6 @@ protocol MapViewModelProtocol: ObservableObject {
     var places: [MapPlace] { get set }
     
     func showList()
-    func addLocation()
+    func createLocation()
     func didTapAnnotation(place: MapPlace)
 }
