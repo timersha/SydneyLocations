@@ -20,13 +20,13 @@ extension AddLocationInfoItemFactory: AddLocationInfoItemFactoryProtocol {
             placeholder: "Location name"
         )
         
-        delegate.bindedName = nameItem.bindedText
+        delegate.namePublisher = nameItem.$text.eraseToAnyPublisher()
         
         let descriptionItem = AddLocationInfoItem(
             text: delegate.description,
             placeholder: "Location description"
         )
-        delegate.bindedDescription = descriptionItem.bindedText
+        delegate.descriptionPublisher = descriptionItem.$text.eraseToAnyPublisher()
         return [nameItem, descriptionItem]
     }
 }

@@ -43,5 +43,9 @@ extension CreateLocationCoordinator: SelectLocationDelegate {
 // MARK: - AddLocationInfoDelegate
 
 extension CreateLocationCoordinator: AddLocationInfoDelegate {
-    
+    func onSaveTap(name: String, description: String) {
+        // TODO: Save to Core Data
+        rootRouter.dismissFullCover()
+        onFinish(self)
+    }
 }

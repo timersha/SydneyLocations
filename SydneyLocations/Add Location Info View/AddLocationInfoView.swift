@@ -32,7 +32,7 @@ struct AddLocationInfoView<ViewModel: AddLocationInfoViewModelProtocol>: View {
                 viewModel.onSaveTap()
             } label: {
                 Text("Save")
-            }
+            }.disabled(viewModel.isSaveDisabled)
         }
     }
 }
