@@ -76,6 +76,10 @@
 		D40FE07F2B300F4A00702FA1 /* RootRouterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE07E2B300F4A00702FA1 /* RootRouterState.swift */; };
 		D40FE0812B301B1B00702FA1 /* CreateLocationRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0802B301B1B00702FA1 /* CreateLocationRootRouter.swift */; };
 		D40FE0842B301C5C00702FA1 /* CreateLocationRootRouterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0832B301C5C00702FA1 /* CreateLocationRootRouterState.swift */; };
+		D40FE0882B306D2900702FA1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0872B306D2900702FA1 /* CoreDataService.swift */; };
+		D40FE08B2B30866700702FA1 /* sydney_locations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0892B30866700702FA1 /* sydney_locations.xcdatamodeld */; };
+		D40FE08D2B3087E200702FA1 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE08C2B3087E200702FA1 /* CoreDataServiceProtocol.swift */; };
+		D40FE08F2B308B8C00702FA1 /* CoreDataService+Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE08E2B308B8C00702FA1 /* CoreDataService+Locations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +153,10 @@
 		D40FE07E2B300F4A00702FA1 /* RootRouterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterState.swift; sourceTree = "<group>"; };
 		D40FE0802B301B1B00702FA1 /* CreateLocationRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationRootRouter.swift; sourceTree = "<group>"; };
 		D40FE0832B301C5C00702FA1 /* CreateLocationRootRouterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationRootRouterState.swift; sourceTree = "<group>"; };
+		D40FE0872B306D2900702FA1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		D40FE08A2B30866700702FA1 /* sydney_locations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sydney_locations.xcdatamodel; sourceTree = "<group>"; };
+		D40FE08C2B3087E200702FA1 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		D40FE08E2B308B8C00702FA1 /* CoreDataService+Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Locations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +226,7 @@
 		D40FDFEB2B2CA67100702FA1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D40FE0862B306D1B00702FA1 /* Core Data Service */,
 				D40FDFEC2B2CA67D00702FA1 /* FileService.swift */,
 				D40FDFF42B2DA1A300702FA1 /* ParserService.swift */,
 			);
@@ -446,6 +455,17 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D40FE0862B306D1B00702FA1 /* Core Data Service */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE08C2B3087E200702FA1 /* CoreDataServiceProtocol.swift */,
+				D40FE0872B306D2900702FA1 /* CoreDataService.swift */,
+				D40FE08E2B308B8C00702FA1 /* CoreDataService+Locations.swift */,
+				D40FE0892B30866700702FA1 /* sydney_locations.xcdatamodeld */,
+			);
+			path = "Core Data Service";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FE0882B306D2900702FA1 /* CoreDataService.swift in Sources */,
 				D40FE06A2B2F908900702FA1 /* AddLocationInfoItemFactory.swift in Sources */,
 				D40FE07B2B30099600702FA1 /* CreateLocationRouterState.swift in Sources */,
 				D40FE0312B2EFA5F00702FA1 /* MapRouter.swift in Sources */,
@@ -535,6 +556,7 @@
 				D40FE0542B2F606400702FA1 /* LocationInfoViewAssembly.swift in Sources */,
 				D40FE0682B2F8D9800702FA1 /* AddLocationInfoItemView.swift in Sources */,
 				D40FDFED2B2CA67D00702FA1 /* FileService.swift in Sources */,
+				D40FE08D2B3087E200702FA1 /* CoreDataServiceProtocol.swift in Sources */,
 				D40FE0262B2EF54C00702FA1 /* AppCoordinatorAssembly.swift in Sources */,
 				D40FE07D2B3009D400702FA1 /* CreateLocationCoordinatorAssembly.swift in Sources */,
 				D40FE0432B2EFCFF00702FA1 /* ViewsBaseFactory+FullCover.swift in Sources */,
@@ -548,6 +570,7 @@
 				D40FE02B2B2EF7A900702FA1 /* MapCoordinator.swift in Sources */,
 				D40FE0362B2EFB0800702FA1 /* BaseContentLink.swift in Sources */,
 				D40FE01E2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift in Sources */,
+				D40FE08F2B308B8C00702FA1 /* CoreDataService+Locations.swift in Sources */,
 				D40FE0772B3008D100702FA1 /* CreateLocationCoordinator.swift in Sources */,
 				D40FE00E2B2E02D000702FA1 /* ViewGeneratable.swift in Sources */,
 				D40FE0462B2F044700702FA1 /* MapViewModelProtocol.swift in Sources */,
@@ -558,6 +581,7 @@
 				D40FE04D2B2F0F4700702FA1 /* LocationsViewItemsDelegate.swift in Sources */,
 				D40FE02F2B2EF98100702FA1 /* CoordinatorsFactory.swift in Sources */,
 				D40FE0382B2EFB4300702FA1 /* BaseSheetLink.swift in Sources */,
+				D40FE08B2B30866700702FA1 /* sydney_locations.xcdatamodeld in Sources */,
 				D40FE00B2B2E002B00702FA1 /* LocationItem.swift in Sources */,
 				D40FE0342B2EFAEC00702FA1 /* ViewsBaseFactory.swift in Sources */,
 				D40FDFFB2B2DA83400702FA1 /* MapViewAssembly.swift in Sources */,
@@ -781,6 +805,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D40FE0892B30866700702FA1 /* sydney_locations.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D40FE08A2B30866700702FA1 /* sydney_locations.xcdatamodel */,
+			);
+			currentVersion = D40FE08A2B30866700702FA1 /* sydney_locations.xcdatamodel */;
+			path = sydney_locations.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D40FDFCC2B2C9FA400702FA1 /* Project object */;
 }
