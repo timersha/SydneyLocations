@@ -1,13 +1,22 @@
 import SwiftUI
 
-struct AddLocationInfoItem: ViewGeneratable {
+class AddLocationInfoItem: ViewGeneratable, ObservableObject {
     let id = UUID()
     let placeholder: String
-    let text: Binding<String>
+    lazy var bindedText: Binding<String> = Binding(get: { self.text }, set: { self.text = $0 })
+    @Published var text: String
+    
+    init(
+        text: String,
+        placeholder: String
+    ) {
+        self.text = text
+        self.placeholder = placeholder
+    }
     
     // MARK: - ViewGeneratable
     
-    func view() -> AnyView {
-        AddLocationInfoItemView(model: self).anyView()
+    func view(proxy: ScrollViewProxy) -> AnyView {
+        AddLocationInfoItemView(model: self, proxy: proxy).anyView()
     }
 }

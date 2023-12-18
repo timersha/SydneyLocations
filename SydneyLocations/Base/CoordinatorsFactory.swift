@@ -7,6 +7,11 @@ protocol CoordinatorsFactoryProtocol {
         appRouter: AppRouterable,
         onFinish: @escaping OnFinishFlow
     ) -> Coordinatable
+    
+    static func makeCreateLocationCoordinator(
+        rootRouterState: RootRouterState,
+        onFinish: @escaping OnFinishFlow
+    ) -> Coordinatable
 }
 
 enum CoordinatorsFactory {}
@@ -26,5 +31,15 @@ extension CoordinatorsFactory: CoordinatorsFactoryProtocol {
     
     static func makeAppCoordinator(window: UIWindow?) -> Coordinatable {
         AppCoordinatorAssembly.build(window: window)
+    }
+    
+    static func makeCreateLocationCoordinator(
+        rootRouterState: RootRouterState,
+        onFinish: @escaping OnFinishFlow
+    ) -> Coordinatable {
+        CreateLocationCoordinatorAssembly.build(
+            rootRouterState: rootRouterState,
+            onFinish: onFinish
+        )
     }
 }

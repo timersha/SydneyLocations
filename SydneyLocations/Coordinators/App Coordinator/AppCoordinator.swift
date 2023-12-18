@@ -22,7 +22,6 @@ extension AppCoordinator: Coordinatable {
         let mapCoordinator = factory.makeMapCoordinator(appRouter: router) { [weak self] coordinator in
             guard let self = self else { return }
             self.remove(childCoordinator: coordinator)
-            
         }
         add(childCoordinator: mapCoordinator)
         mapCoordinator.start()

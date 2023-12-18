@@ -4,6 +4,7 @@ enum BaseContentLink: Hashable, Identifiable {
     
     case map(MapViewModelDelegate?)
     case locationsList(LocationsViewItemsDelegate?)
+    case addLocationInfo(AddLocationInfoDelegate?)
     
     var id: String {
         String(describing: self)

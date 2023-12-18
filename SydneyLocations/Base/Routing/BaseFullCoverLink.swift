@@ -2,7 +2,8 @@ import SwiftUI
 
 enum BaseFullCoverLink: Hashable, Identifiable {
     
-    case addLocation(AddLocationDelegate?)
+    case selectLocation(SelectLocationDelegate?)
+    case custom(AnyView)
 
     var id: String {
         String(describing: self)

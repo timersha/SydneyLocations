@@ -2,8 +2,8 @@ import Foundation
 
 struct Location: Codable {
     let name: String
-    let latitude: Double // -33.850750
-    let longitude: Double // 151.276440
+    let latitude: Double
+    let longitude: Double
 
     enum CodingKeys: String, CodingKey {
         case name

@@ -6,26 +6,21 @@ struct AddLocationInfoView<ViewModel: AddLocationInfoViewModelProtocol>: View {
     @FocusState var focusedWord: Bool
     
     var body: some View {
-        NavigationView {
-            ScrollViewReader { proxy in
-                List {
-                    ForEach(viewModel.displayItems, id: \.hashValue) { item in
-                        item.view()
-                            .listRowSeparator(.hidden)
-                            .focused($focusedWord)
-//                            .onChange(of: item.text) { _ in
-//                                proxy.scrollTo(3, anchor: .bottom)
-//                            }
-//                            .id(3)
-                    }
+        ScrollViewReader { proxy in
+            List {
+                ForEach(viewModel.displayItems, id: \.hashValue) { item in
+                    item.view(proxy: proxy)
+                        .listRowSeparator(.hidden)
+                        .focused($focusedWord)
                 }
-                .scrollDismissesKeyboard(.immediately)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarTitle("New location information")
-                .font(.system(size: 17, weight: .semibold))
-                .toolbar {
-                    makeToolBar()
-                }
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("New location information")
+            .font(.system(size: 17, weight: .semibold))
+            .toolbarRole(.editor)
+            .toolbar {
+                makeToolBar()
             }
         }
     }
