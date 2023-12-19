@@ -22,10 +22,6 @@ struct AddLocationInfoView<ViewModel: AddLocationInfoViewModelProtocol>: View {
             .toolbar {
                 makeToolBar()
             }
-            .overlay(alignment: .center) {
-                ProgressView()
-                    .opacity(viewModel.loaderOpactiy)
-            }
         }
     }
     

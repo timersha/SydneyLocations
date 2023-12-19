@@ -20,5 +20,8 @@ struct LocationsView<ViewModel: LocationsViewModelProtocol>: View {
         .navigationBarTitle("Sydney Locations List")
         .font(.system(size: 17, weight: .semibold))
         .toolbarRole(.editor)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }

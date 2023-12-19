@@ -40,7 +40,7 @@ struct SelectLocationView<ViewModel: SelectLocationViewProtocol>: View {
                     .foregroundColor(.white)
                     .padding(.vertical, 4)
                     .padding(.horizontal, 8)
-                    .background(.red)
+                    .background(.green)
                     .cornerRadius(8)
             }
         }

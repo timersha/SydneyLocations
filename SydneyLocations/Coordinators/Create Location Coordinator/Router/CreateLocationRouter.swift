@@ -22,7 +22,7 @@ struct CreateLocationRouter<
     }
     
     var body: some View {
-        NavigationStack(path: $state.path) { // .animation(.linear(duration: 0))
+        NavigationStack(path: $state.path) {
             content
                 .sheet(
                     item: $state.presentedItem,

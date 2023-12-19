@@ -3,33 +3,49 @@ import Foundation
 final class LocationsViewModel {
     @Published var displayItems = [any ViewGeneratable]()
     private let factory: LocationsItemsFactoryProtocol.Type
-    private let fileService: FileServiceProtocol.Type
-    private let parser: Parsable.Type
+    private let coreDataService: CoreDataServiceProtocol
+    private var notificationToken: NSObjectProtocol?
     weak var delegate: LocationsViewItemsDelegate?
     
     
     init(
         delegate: LocationsViewItemsDelegate? = nil,
-        fileService: FileServiceProtocol.Type = FileService.self,
-        factory: LocationsItemsFactoryProtocol.Type = LocationsItemsFactory.self,
-        parser: Parsable.Type = ParserService.self
+        coreDataService: CoreDataServiceProtocol = CoreDataService.shared,
+        factory: LocationsItemsFactoryProtocol.Type = LocationsItemsFactory.self
     ) {
         self.delegate = delegate
-        self.fileService = fileService
+        self.coreDataService = coreDataService
         self.factory = factory
-        self.parser = parser
-        readPlaces()
+        readLocations()
+        subscribeToNotifications()
     }
     
-    private func readPlaces() {
-        guard let locationsData: Data = fileService.defaultLocationsData(),
-              let locations = parser.parse(data: locationsData, to: Locations.self),
-              let itemLocations: [Location] = locations.locations else {
-            return
+    deinit {
+        if let observer = notificationToken {
+            NotificationCenter.default.removeObserver(observer)
         }
-        
-        let mapLocations = factory.makeLocationItems(models: itemLocations, delegate: self)
-        displayItems = mapLocations
+    }
+    
+    private func subscribeToNotifications() {
+        notificationToken = NotificationCenter.default.addObserver(
+            forName: .didUpdateLocations,
+            object: nil,
+            queue: nil
+        ) { [weak self] note in
+            guard let self = self else { return }
+            self.readLocations()
+        }
+    }
+    
+    private func readLocations() {
+        Task {
+            let locations: [Location] = await coreDataService.getLocations()
+            let sLocations = factory.makeLocationItems(models: locations, delegate: self)
+            
+            await MainActor.run {
+                displayItems = sLocations
+            }
+        }
     }
 }
 
@@ -38,6 +54,10 @@ final class LocationsViewModel {
 extension LocationsViewModel: LocationsViewModelProtocol {
     func onLocationAppear(model: any ViewGeneratable) {
         debugPrint("onLocationAppear \(model)")
+    }
+    
+    func onAppear() {
+        readLocations()
     }
 }
 

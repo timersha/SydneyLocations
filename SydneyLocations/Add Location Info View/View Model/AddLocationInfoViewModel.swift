@@ -9,7 +9,6 @@ final class AddLocationInfoViewModel: AddLocationInfoItemDelegate {
     
     @Published var displayItems = [any ViewGeneratable]()
     @Published var isSaveDisabled: Bool = false
-    @Published var loaderOpactiy: Double = .zero
     private let factory: AddLocationInfoItemFactoryProtocol.Type
     weak var delegate: AddLocationInfoDelegate?
     private var cancellables = Set<AnyCancellable>()
@@ -61,12 +60,11 @@ extension AddLocationInfoViewModel: AddLocationInfoViewModelProtocol {
         guard !name.isEmpty, !description.isEmpty else {
             return
         }
-        loaderOpactiy = 1
         delegate?.onSaveTap(
             name: name,
             description: description
-        ) { [weak self] in
-            self?.loaderOpactiy = .zero
+        ) {
+            debugPrint("")
         }
     }
 }

@@ -19,6 +19,7 @@ extension MapItemsFactory: MapItemsFactoryProtocol {
     static func makeMapItems(models: [Location]) -> [MapPlace] {
         models.map {
             MapPlace(
+                id: $0.id ?? UUID(),
                 name: $0.name,
                 latitude: $0.latitude,
                 longitude: $0.longitude,
