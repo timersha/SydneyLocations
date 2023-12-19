@@ -69,6 +69,10 @@ extension CreateLocationCoordinator: AddLocationInfoDelegate {
                 saveCompletion()
                 rootRouter.dismissFullCover()
                 onFinish(self)
+                NotificationCenter.default.post(
+                    name: .didUpdateLocations,
+                    object: nil
+                )
             }
         }
     }

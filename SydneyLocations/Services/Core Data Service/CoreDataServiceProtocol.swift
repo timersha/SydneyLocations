@@ -10,7 +10,6 @@ protocol CoreDataServiceProtocol {
     
     // MARK: - CREATE
     
-    @discardableResult
     func create(location: Location) async
     
     func createLocation(

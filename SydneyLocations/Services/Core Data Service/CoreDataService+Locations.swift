@@ -93,7 +93,10 @@ extension CoreDataService {
         )
         
         await context.perform {
-            let sLocation = SydneyLocation(context: context)
+            let sLocation = NSEntityDescription.insertNewObject(
+                forEntityName: .entityName,
+                into: context
+            )
             sLocation.setValue(id, forKey: .id)
             sLocation.setValue(name, forKey: .name)
             sLocation.setValue(latitude, forKey: .latitude)

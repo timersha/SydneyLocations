@@ -21,10 +21,10 @@ extension LocationInfoItemsFactory: LocationInfoItemsFactoryProtocol {
             LocationInfoItem(text: model.name) {
                 delegate.didTapOn(item: model, type: .name)
             },
-            LocationInfoItem(text: "lat: \(model.lat)") {
+            LocationInfoItem(text: "lat: \(model.latitude)") {
                 delegate.didTapOn(item: model, type: .lat)
             },
-            LocationInfoItem(text: "lon: \(model.lon)") {
+            LocationInfoItem(text: "lon: \(model.longitude)") {
                 delegate.didTapOn(item: model, type: .lon)
             },
             LocationInfoItem(text: "description: \(model.description)") {

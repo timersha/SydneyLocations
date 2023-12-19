@@ -3,13 +3,14 @@ import Foundation
 
 struct MapPlace: Identifiable, Equatable {
     static let Sydney = MapPlace(
+        id: UUID(),
         name: "Sydney",
         latitude: -33.865143,
         longitude: 151.209900,
         description: "Sydney is the capital of the Australia."
     )
     
-    let id = UUID().uuidString
+    let id: UUID
     let name: String
     let latitude: Double
     let longitude: Double

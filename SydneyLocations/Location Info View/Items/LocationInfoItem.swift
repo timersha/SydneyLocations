@@ -10,4 +10,9 @@ struct LocationInfoItem: ViewGeneratable {
     func view() -> AnyView {
         LocationInfoItemView(model: self).anyView()
     }
+    
+    @ViewBuilder
+    func view(proxy: ScrollViewProxy) -> AnyView {
+        LocationInfoItemView(model: self).anyView()
+    }
 }
