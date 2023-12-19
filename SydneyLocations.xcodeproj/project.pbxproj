@@ -95,6 +95,8 @@
 		D40FE0BD2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0BC2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift */; };
 		D40FE0C02B31A35600702FA1 /* AddLocationInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */; };
 		D40FE0C22B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */; };
+		D40FE0C72B31A66800702FA1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D40FE0C62B31A66800702FA1 /* Alamofire */; };
+		D40FE0C92B31A67800702FA1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0C82B31A67800702FA1 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,7 @@
 		D40FE0BC2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoItemFactoryMock.swift; sourceTree = "<group>"; };
 		D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoViewModelTests.swift; sourceTree = "<group>"; };
 		D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoDelegateMock.swift; sourceTree = "<group>"; };
+		D40FE0C82B31A67800702FA1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FE0C72B31A66800702FA1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +280,7 @@
 		D40FDFEB2B2CA67100702FA1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D40FE0C42B31A5B500702FA1 /* Network Service */,
 				D40FE0862B306D1B00702FA1 /* Core Data Service */,
 				D40FDFEC2B2CA67D00702FA1 /* FileService.swift */,
 				D40FDFF42B2DA1A300702FA1 /* ParserService.swift */,
@@ -602,6 +607,14 @@
 			path = "Add Location Info View Model";
 			sourceTree = "<group>";
 		};
+		D40FE0C42B31A5B500702FA1 /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0C82B31A67800702FA1 /* NetworkService.swift */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -618,6 +631,9 @@
 			dependencies = (
 			);
 			name = SydneyLocations;
+			packageProductDependencies = (
+				D40FE0C62B31A66800702FA1 /* Alamofire */,
+			);
 			productName = SydneyLocations;
 			productReference = D40FDFD42B2C9FA400702FA1 /* SydneyLocations.app */;
 			productType = "com.apple.product-type.application";
@@ -668,6 +684,9 @@
 				Base,
 			);
 			mainGroup = D40FDFCB2B2C9FA400702FA1;
+			packageReferences = (
+				D40FE0C52B31A66800702FA1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D40FDFD52B2C9FA400702FA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -760,6 +779,7 @@
 				D40FDFF02B2D77F100702FA1 /* AppDelegate.swift in Sources */,
 				D40FDFFF2B2DAE9200702FA1 /* MapItemsFactory.swift in Sources */,
 				D40FE0812B301B1B00702FA1 /* CreateLocationRootRouter.swift in Sources */,
+				D40FE0C92B31A67800702FA1 /* NetworkService.swift in Sources */,
 				D40FE0052B2DCC9600702FA1 /* LocationsView.swift in Sources */,
 				D40FDFF92B2DA74800702FA1 /* MapViewModel.swift in Sources */,
 				D40FE03A2B2EFB6C00702FA1 /* BaseFullCoverLink.swift in Sources */,
@@ -1048,6 +1068,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D40FE0C52B31A66800702FA1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D40FE0C62B31A66800702FA1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D40FE0C52B31A66800702FA1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D40FE0892B30866700702FA1 /* sydney_locations.xcdatamodeld */ = {

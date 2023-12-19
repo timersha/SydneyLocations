@@ -10,10 +10,9 @@ final class MapCoordinator {
     var childCoordinators = [String: Coordinatable]()
     private let appRouter: AppRouterable
     var router: MapRouterable
-    private let fileService: FileServiceProtocol.Type
     private let coreDataService: CoreDataServiceProtocol
-    private let parser: Parsable.Type
     private let factory: CoordinatorsFactoryProtocol.Type
+    private let networkService: NetworkServiceProtocol
     private let onFinish: OnFinishFlow
     
     init(
@@ -21,29 +20,27 @@ final class MapCoordinator {
         router: MapRouterable,
         factory: CoordinatorsFactoryProtocol.Type = CoordinatorsFactory.self,
         coreDataService: CoreDataServiceProtocol = CoreDataService.shared,
-        fileService: FileServiceProtocol.Type = FileService.self,
-        parser: Parsable.Type = ParserService.self,
+        networkService: NetworkServiceProtocol = NetworkService.shared,
         onFinish: @escaping OnFinishFlow
     ) {
         self.appRouter = appRouter
         self.router = router
         self.factory = factory
-        self.fileService = fileService
         self.coreDataService = coreDataService
-        self.parser = parser
+        self.networkService = networkService
         self.onFinish = onFinish
         readAndSaveDefaultPlaces()
     }
     
     private func readAndSaveDefaultPlaces() {
-        
-        guard let locationsData: Data = fileService.defaultLocationsData(),
-              let locations = parser.parse(data: locationsData, to: Locations.self),
-              let defaultLocations: [Location] = locations.locations else {
-            return
-        }
-
         Task {
+            
+            let result = await networkService.getDefaultLocations()
+            guard let locations: Locations = result.model,
+                  let defaultLocations: [Location] = locations.locations else {
+                return
+            }
+            
             await withTaskGroup(of: Void.self) { [weak self] group in
                 guard let self = self else { return }
                 
