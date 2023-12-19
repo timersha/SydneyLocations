@@ -1,9 +1,12 @@
 import XCTest
 import MapKit
 import CoreLocation
+import Combine
 @testable import SydneyLocations
 
 final class MapViewModelTests: XCTestCase {
+    
+    private var cancellable = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -84,6 +87,16 @@ final class MapViewModelTests: XCTestCase {
             factory: factoryMock
         )
         
+        let onAppearCallExpectation = XCTestExpectation()
+        
+        coreDataServiceMock.$isGetLocationsCalled
+            .sink { value in
+            debugPrint("value: \(value)")
+                if value {
+                    onAppearCallExpectation.fulfill()
+                }
+            }.store(in: &cancellable)
+        
         // act
         let task = Task {
             viewModel.onAppear()
@@ -91,7 +104,7 @@ final class MapViewModelTests: XCTestCase {
         await task.value
         
         // assert
-        XCTAssert(coreDataServiceMock.isGetLocationsCalled == true, "getLocations method not called")
+        await fulfillment(of: [onAppearCallExpectation], timeout: 2)
         XCTAssert(factoryMock.isMakeMapItemsCalled == true, "makeMapItems method not called")
     }
     

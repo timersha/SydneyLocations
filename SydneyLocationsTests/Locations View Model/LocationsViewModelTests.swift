@@ -1,7 +1,10 @@
 import XCTest
+import Combine
 @testable import SydneyLocations
 
 final class LocationsViewModelTests: XCTestCase {
+    
+    private var cancellable = Set<AnyCancellable>()
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,6 +26,16 @@ final class LocationsViewModelTests: XCTestCase {
             factory: factoryMock
         )
         
+        let onAppearCallExpectation = XCTestExpectation()
+        
+        coreDataServiceMock.$isGetLocationsCalled
+            .sink { value in
+                debugPrint("value: \(value)")
+                if value {
+                    onAppearCallExpectation.fulfill()
+                }
+            }.store(in: &cancellable)
+        
         // act
         let task = Task {
             viewModel.onAppear()
@@ -30,6 +43,6 @@ final class LocationsViewModelTests: XCTestCase {
         await task.value
         
         // assert
-        XCTAssert(coreDataServiceMock.isGetLocationsCalled == true, "getLocations method not called")
+        await fulfillment(of: [onAppearCallExpectation], timeout: 2)
     }
 }
