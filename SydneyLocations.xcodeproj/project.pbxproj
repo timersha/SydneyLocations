@@ -80,7 +80,32 @@
 		D40FE08B2B30866700702FA1 /* sydney_locations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0892B30866700702FA1 /* sydney_locations.xcdatamodeld */; };
 		D40FE08D2B3087E200702FA1 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE08C2B3087E200702FA1 /* CoreDataServiceProtocol.swift */; };
 		D40FE08F2B308B8C00702FA1 /* CoreDataService+Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE08E2B308B8C00702FA1 /* CoreDataService+Locations.swift */; };
+		D40FE09E2B3172B600702FA1 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE09D2B3172B600702FA1 /* MapViewModelTests.swift */; };
+		D40FE0A12B3178F500702FA1 /* MapViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0A02B3178F500702FA1 /* MapViewModelDelegateMock.swift */; };
+		D40FE0A32B3179E200702FA1 /* CoreDataServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0A22B3179E200702FA1 /* CoreDataServiceMock.swift */; };
+		D40FE0A52B3180DF00702FA1 /* MapItemsFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0A42B3180DF00702FA1 /* MapItemsFactoryMock.swift */; };
+		D40FE0A92B31920E00702FA1 /* SelectLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0A82B31920E00702FA1 /* SelectLocationViewModelTests.swift */; };
+		D40FE0AB2B3192EA00702FA1 /* SelectLocationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0AA2B3192EA00702FA1 /* SelectLocationDelegateMock.swift */; };
+		D40FE0AE2B3199AA00702FA1 /* LocationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0AD2B3199AA00702FA1 /* LocationsViewModelTests.swift */; };
+		D40FE0B02B3199E100702FA1 /* LocationsViewItemsDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0AF2B3199E100702FA1 /* LocationsViewItemsDelegateMock.swift */; };
+		D40FE0B22B319B2200702FA1 /* LocationsItemsFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0B12B319B2200702FA1 /* LocationsItemsFactoryMock.swift */; };
+		D40FE0B62B319E3D00702FA1 /* LocationInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0B52B319E3D00702FA1 /* LocationInfoViewModelTests.swift */; };
+		D40FE0B82B319E7900702FA1 /* LocationInfoViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0B72B319E7900702FA1 /* LocationInfoViewModelDelegateMock.swift */; };
+		D40FE0BB2B319ED700702FA1 /* LocationInfoItemsFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0BA2B319ED700702FA1 /* LocationInfoItemsFactoryMock.swift */; };
+		D40FE0BD2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0BC2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift */; };
+		D40FE0C02B31A35600702FA1 /* AddLocationInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */; };
+		D40FE0C22B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D40FE0982B31724900702FA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D40FDFCC2B2C9FA400702FA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D40FDFD32B2C9FA400702FA1;
+			remoteInfo = SydneyLocations;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D40FDFD42B2C9FA400702FA1 /* SydneyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SydneyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,10 +182,33 @@
 		D40FE08A2B30866700702FA1 /* sydney_locations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sydney_locations.xcdatamodel; sourceTree = "<group>"; };
 		D40FE08C2B3087E200702FA1 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
 		D40FE08E2B308B8C00702FA1 /* CoreDataService+Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Locations.swift"; sourceTree = "<group>"; };
+		D40FE0942B31724800702FA1 /* SydneyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SydneyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40FE09D2B3172B600702FA1 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		D40FE0A02B3178F500702FA1 /* MapViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		D40FE0A22B3179E200702FA1 /* CoreDataServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceMock.swift; sourceTree = "<group>"; };
+		D40FE0A42B3180DF00702FA1 /* MapItemsFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemsFactoryMock.swift; sourceTree = "<group>"; };
+		D40FE0A82B31920E00702FA1 /* SelectLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewModelTests.swift; sourceTree = "<group>"; };
+		D40FE0AA2B3192EA00702FA1 /* SelectLocationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationDelegateMock.swift; sourceTree = "<group>"; };
+		D40FE0AD2B3199AA00702FA1 /* LocationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModelTests.swift; sourceTree = "<group>"; };
+		D40FE0AF2B3199E100702FA1 /* LocationsViewItemsDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewItemsDelegateMock.swift; sourceTree = "<group>"; };
+		D40FE0B12B319B2200702FA1 /* LocationsItemsFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsItemsFactoryMock.swift; sourceTree = "<group>"; };
+		D40FE0B52B319E3D00702FA1 /* LocationInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModelTests.swift; sourceTree = "<group>"; };
+		D40FE0B72B319E7900702FA1 /* LocationInfoViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		D40FE0BA2B319ED700702FA1 /* LocationInfoItemsFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoItemsFactoryMock.swift; sourceTree = "<group>"; };
+		D40FE0BC2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoItemFactoryMock.swift; sourceTree = "<group>"; };
+		D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoViewModelTests.swift; sourceTree = "<group>"; };
+		D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoDelegateMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D40FDFD12B2C9FA400702FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40FE0912B31724800702FA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D40FDFD62B2C9FA400702FA1 /* SydneyLocations */,
+				D40FE0952B31724900702FA1 /* SydneyLocationsTests */,
 				D40FDFD52B2C9FA400702FA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				D40FDFD42B2C9FA400702FA1 /* SydneyLocations.app */,
+				D40FE0942B31724800702FA1 /* SydneyLocationsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -466,6 +516,92 @@
 			path = "Core Data Service";
 			sourceTree = "<group>";
 		};
+		D40FE0952B31724900702FA1 /* SydneyLocationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0BE2B31A33F00702FA1 /* Add Location Info View Model */,
+				D40FE0B42B319E2B00702FA1 /* Location Info View Model */,
+				D40FE0AC2B31993900702FA1 /* Locations View Model */,
+				D40FE0A72B3191F500702FA1 /* Select Location View Model */,
+				D40FE09F2B3178B800702FA1 /* Map View Model */,
+			);
+			path = SydneyLocationsTests;
+			sourceTree = "<group>";
+		};
+		D40FE09F2B3178B800702FA1 /* Map View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0A62B31826000702FA1 /* Mocks */,
+				D40FE09D2B3172B600702FA1 /* MapViewModelTests.swift */,
+			);
+			path = "Map View Model";
+			sourceTree = "<group>";
+		};
+		D40FE0A62B31826000702FA1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0A02B3178F500702FA1 /* MapViewModelDelegateMock.swift */,
+				D40FE0A22B3179E200702FA1 /* CoreDataServiceMock.swift */,
+				D40FE0A42B3180DF00702FA1 /* MapItemsFactoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D40FE0A72B3191F500702FA1 /* Select Location View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0AA2B3192EA00702FA1 /* SelectLocationDelegateMock.swift */,
+				D40FE0A82B31920E00702FA1 /* SelectLocationViewModelTests.swift */,
+			);
+			path = "Select Location View Model";
+			sourceTree = "<group>";
+		};
+		D40FE0AC2B31993900702FA1 /* Locations View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0B32B319B2800702FA1 /* Mocks */,
+				D40FE0AD2B3199AA00702FA1 /* LocationsViewModelTests.swift */,
+			);
+			path = "Locations View Model";
+			sourceTree = "<group>";
+		};
+		D40FE0B32B319B2800702FA1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0AF2B3199E100702FA1 /* LocationsViewItemsDelegateMock.swift */,
+				D40FE0B12B319B2200702FA1 /* LocationsItemsFactoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D40FE0B42B319E2B00702FA1 /* Location Info View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0B92B319ECC00702FA1 /* Mocks */,
+				D40FE0B52B319E3D00702FA1 /* LocationInfoViewModelTests.swift */,
+			);
+			path = "Location Info View Model";
+			sourceTree = "<group>";
+		};
+		D40FE0B92B319ECC00702FA1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0B72B319E7900702FA1 /* LocationInfoViewModelDelegateMock.swift */,
+				D40FE0BA2B319ED700702FA1 /* LocationInfoItemsFactoryMock.swift */,
+				D40FE0BC2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D40FE0BE2B31A33F00702FA1 /* Add Location Info View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */,
+				D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */,
+			);
+			path = "Add Location Info View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +622,24 @@
 			productReference = D40FDFD42B2C9FA400702FA1 /* SydneyLocations.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D40FE0932B31724800702FA1 /* SydneyLocationsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D40FE09C2B31724900702FA1 /* Build configuration list for PBXNativeTarget "SydneyLocationsTests" */;
+			buildPhases = (
+				D40FE0902B31724800702FA1 /* Sources */,
+				D40FE0912B31724800702FA1 /* Frameworks */,
+				D40FE0922B31724800702FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D40FE0992B31724900702FA1 /* PBXTargetDependency */,
+			);
+			name = SydneyLocationsTests;
+			productName = SydneyLocationsTests;
+			productReference = D40FE0942B31724800702FA1 /* SydneyLocationsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -498,6 +652,10 @@
 				TargetAttributes = {
 					D40FDFD32B2C9FA400702FA1 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					D40FE0932B31724800702FA1 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = D40FDFD32B2C9FA400702FA1;
 					};
 				};
 			};
@@ -515,6 +673,7 @@
 			projectRoot = "";
 			targets = (
 				D40FDFD32B2C9FA400702FA1 /* SydneyLocations */,
+				D40FE0932B31724800702FA1 /* SydneyLocationsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -526,6 +685,13 @@
 			files = (
 				D40FDFE72B2CA58500702FA1 /* locations.json in Resources */,
 				D40FDFDC2B2C9FA500702FA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40FE0922B31724800702FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +776,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D40FE0902B31724800702FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D40FE0B82B319E7900702FA1 /* LocationInfoViewModelDelegateMock.swift in Sources */,
+				D40FE0C02B31A35600702FA1 /* AddLocationInfoViewModelTests.swift in Sources */,
+				D40FE0B62B319E3D00702FA1 /* LocationInfoViewModelTests.swift in Sources */,
+				D40FE0A12B3178F500702FA1 /* MapViewModelDelegateMock.swift in Sources */,
+				D40FE0A32B3179E200702FA1 /* CoreDataServiceMock.swift in Sources */,
+				D40FE0AB2B3192EA00702FA1 /* SelectLocationDelegateMock.swift in Sources */,
+				D40FE0BD2B31A02E00702FA1 /* AddLocationInfoItemFactoryMock.swift in Sources */,
+				D40FE0A92B31920E00702FA1 /* SelectLocationViewModelTests.swift in Sources */,
+				D40FE0AE2B3199AA00702FA1 /* LocationsViewModelTests.swift in Sources */,
+				D40FE0B02B3199E100702FA1 /* LocationsViewItemsDelegateMock.swift in Sources */,
+				D40FE0A52B3180DF00702FA1 /* MapItemsFactoryMock.swift in Sources */,
+				D40FE0B22B319B2200702FA1 /* LocationsItemsFactoryMock.swift in Sources */,
+				D40FE0BB2B319ED700702FA1 /* LocationInfoItemsFactoryMock.swift in Sources */,
+				D40FE09E2B3172B600702FA1 /* MapViewModelTests.swift in Sources */,
+				D40FE0C22B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D40FE0992B31724900702FA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D40FDFD32B2C9FA400702FA1 /* SydneyLocations */;
+			targetProxy = D40FE0982B31724900702FA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D40FDFE02B2C9FA500702FA1 /* Debug */ = {
@@ -783,6 +979,44 @@
 			};
 			name = Release;
 		};
+		D40FE09A2B31724900702FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNWLM7F9M6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = timersha.Inc.com.SydneyLocationsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SydneyLocations.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SydneyLocations";
+			};
+			name = Debug;
+		};
+		D40FE09B2B31724900702FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNWLM7F9M6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = timersha.Inc.com.SydneyLocationsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SydneyLocations.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SydneyLocations";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -800,6 +1034,15 @@
 			buildConfigurations = (
 				D40FDFE32B2C9FA500702FA1 /* Debug */,
 				D40FDFE42B2C9FA500702FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D40FE09C2B31724900702FA1 /* Build configuration list for PBXNativeTarget "SydneyLocationsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D40FE09A2B31724900702FA1 /* Debug */,
+				D40FE09B2B31724900702FA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

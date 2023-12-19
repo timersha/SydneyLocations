@@ -27,6 +27,7 @@ final class LocationsViewModel {
     }
     
     private func subscribeToNotifications() {
+        // TODO: Create notification center service
         notificationToken = NotificationCenter.default.addObserver(
             forName: .didUpdateLocations,
             object: nil,

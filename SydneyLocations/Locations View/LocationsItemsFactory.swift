@@ -4,7 +4,7 @@ protocol LocationsItemsFactoryProtocol {
     static func makeLocationItems(
         models: [Location],
         delegate: LocationsViewItemsDelegate
-    ) -> [LocationItem]
+    ) -> [any ViewGeneratable]
 }
 
 enum LocationsItemsFactory {}
@@ -15,7 +15,7 @@ extension LocationsItemsFactory: LocationsItemsFactoryProtocol {
     static func makeLocationItems(
         models: [Location],
         delegate: LocationsViewItemsDelegate
-    ) -> [LocationItem] {
+    ) -> [any ViewGeneratable] {
         models.map { location in
             LocationItem(name: location.name) {
                 delegate.didTapItem(model: location)
