@@ -1,9 +1,9 @@
 import Foundation
 @testable import SydneyLocations
 
-final class CoreDataServiceMock: CoreDataServiceProtocol {
+final class CoreDataServiceMock: ObservableObject, CoreDataServiceProtocol {
     
-    var isGetLocationsCalled: Bool = false
+    @Published var isGetLocationsCalled: Bool = false
     var getLocationsResponse = [SydneyLocations.Location]()
     
     var isGetLocationByIdCalled: Bool = false
