@@ -137,13 +137,13 @@ extension CoreDataService {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
             let sydneyLocations: [SydneyLocation] = (try? context.fetch(fetchRequest)) ?? []
             
-            if let model = sydneyLocations.first {
-                model.setValue(name, forKey: .name)
-                model.setValue(latitude, forKey: .latitude)
-                model.setValue(longitude, forKey: .longitude)
-                model.setValue(descriptionText, forKey: .descriptionText)
-                try? context.save()
-            }
+            guard let model = sydneyLocations.first else { return }
+            
+            model.setValue(name, forKey: .name)
+            model.setValue(latitude, forKey: .latitude)
+            model.setValue(longitude, forKey: .longitude)
+            model.setValue(descriptionText, forKey: .descriptionText)
+            try? context.save()
         }
     }
     
@@ -159,7 +159,10 @@ extension CoreDataService {
         await context.perform {
             let fetchRequest = NSFetchRequest<SydneyLocation>(entityName: .entityName)
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-            let result = try? context.fetch(fetchRequest)
+            let result: [SydneyLocation]? = try? context.fetch(fetchRequest)
+            result?.forEach {
+                debugPrint("sLocation \(String(describing: $0.name))")
+            }
             result?.forEach(context.delete)
             try? context.save()
         }

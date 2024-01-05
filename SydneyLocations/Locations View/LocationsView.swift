@@ -13,8 +13,11 @@ struct LocationsView<ViewModel: LocationsViewModelProtocol>: View {
                         viewModel.onLocationAppear(model: item)
                     }
             }
+            .onDelete {
+                viewModel.onDeleteItems(indexes: $0)
+            }
         }
-        .background(Color.white)
+        .background(.white)
         .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarTitle("Sydney Locations List")
