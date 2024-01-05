@@ -2,6 +2,7 @@ import Foundation
 
 final class LocationsViewModel {
     @Published var displayItems = [any ViewGeneratable]()
+    private var locationsDTOs = [Location]()
     private let factory: LocationsItemsFactoryProtocol.Type
     private let coreDataService: CoreDataServiceProtocol
     private var notificationToken: NSObjectProtocol?
@@ -41,8 +42,8 @@ final class LocationsViewModel {
     private func readLocations() {
         Task {
             let locations: [Location] = await coreDataService.getLocations()
+            self.locationsDTOs = locations
             let sLocations = factory.makeLocationItems(models: locations, delegate: self)
-            
             await MainActor.run {
                 displayItems = sLocations
             }
@@ -53,12 +54,22 @@ final class LocationsViewModel {
 // MARK: - LocationsViewModelProtocol
 
 extension LocationsViewModel: LocationsViewModelProtocol {
-    func onLocationAppear(model: any ViewGeneratable) {
-        debugPrint("onLocationAppear \(model)")
-    }
+    func onLocationAppear(model: any ViewGeneratable) {}
     
     func onAppear() {
         readLocations()
+    }
+    
+    func onDeleteItems(indexes: IndexSet) {
+        indexes.forEach {
+            guard let location: Location = locationsDTOs[safe: $0],
+                  let locationId = location.id else {
+                return
+            }
+            Task {
+                await coreDataService.deleteLocation(byId: locationId)
+            }
+        }
     }
 }
 

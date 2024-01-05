@@ -97,6 +97,7 @@
 		D40FE0C22B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */; };
 		D40FE0C72B31A66800702FA1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D40FE0C62B31A66800702FA1 /* Alamofire */; };
 		D40FE0C92B31A67800702FA1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE0C82B31A67800702FA1 /* NetworkService.swift */; };
+		D4FA6AFD2B484C0400440451 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FA6AFC2B484C0400440451 /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,7 @@
 		D40FE0BF2B31A35600702FA1 /* AddLocationInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoViewModelTests.swift; sourceTree = "<group>"; };
 		D40FE0C12B31A38B00702FA1 /* AddLocationInfoDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInfoDelegateMock.swift; sourceTree = "<group>"; };
 		D40FE0C82B31A67800702FA1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D4FA6AFC2B484C0400440451 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 			children = (
 				D40FE0112B2E03C500702FA1 /* View+Extensions.swift */,
 				D40FE01D2B2E27CA00702FA1 /* MKCoordinateRegion+Extensions.swift */,
+				D4FA6AFC2B484C0400440451 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				D40FDFFD2B2DAE0F00702FA1 /* MapPlace.swift in Sources */,
 				D40FE0642B2F882A00702FA1 /* AddLocationInfoViewAssembly.swift in Sources */,
 				D40FE0412B2EFCB900702FA1 /* ViewsBaseFactory+Sheet.swift in Sources */,
+				D4FA6AFD2B484C0400440451 /* Array+Extensions.swift in Sources */,
 				D40FE04B2B2F0F2B00702FA1 /* LocationsViewModelProtocol.swift in Sources */,
 				D40FE0092B2DCD1A00702FA1 /* LocationsViewAssembly.swift in Sources */,
 				D40FE0622B2F87D900702FA1 /* AddLocationInfoViewModel.swift in Sources */,

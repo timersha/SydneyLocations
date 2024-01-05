@@ -5,4 +5,5 @@ protocol LocationsViewModelProtocol: ObservableObject {
     
     func onLocationAppear(model: any ViewGeneratable)
     func onAppear()
+    func onDeleteItems(indexes: IndexSet)
 }
